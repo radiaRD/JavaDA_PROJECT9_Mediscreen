@@ -9,5 +9,6 @@ public interface IPatientService {
     String home(Model model, PatientDto patientDto);
 
     void showPatientByLastName(String lastName, Model model, PatientDto patientDto);
+    void updatePatient(String lastName, PatientDto patientDto, Model model);
 
 }

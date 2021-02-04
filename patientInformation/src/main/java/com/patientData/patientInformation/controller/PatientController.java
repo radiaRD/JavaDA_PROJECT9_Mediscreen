@@ -1,6 +1,5 @@
 package com.patientData.patientInformation.controller;
 
-import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
 import com.patientData.patientInformation.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +32,14 @@ public class PatientController {
         return "patientDto";
     }
 
+    @PostMapping("/patient/update/{lastName}")
+    public String updatePatient(@PathVariable("lastName") String lastName, @Valid PatientDto patientDto,
+                                BindingResult result, Model model) {
+
+        if (result.hasErrors()) {
+            return "patientDto";
+        }
+        patientService.updatePatient(lastName, patientDto, model);
+        return "patientDtoList";
+    }
 }

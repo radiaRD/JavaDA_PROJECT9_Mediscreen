@@ -35,4 +35,10 @@ public class PatientService implements IPatientService {
         model.addAttribute("patientDto", patientDto);
     }
 
+    public void updatePatient(String lastName, PatientDto patientDto, Model model) {
+        Patient patient = modelMapper.map(patientDto, Patient.class);
+        patientRepository.save(patient);
+        model.addAttribute("patientDto", patientRepository.findAll());
+    }
+
 }

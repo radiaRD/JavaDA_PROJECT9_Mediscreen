@@ -16,7 +16,6 @@ import java.util.Date;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -51,4 +50,13 @@ public class PatientIT {
                 .andExpect(model().attribute("patientDto", Matchers.hasProperty("lastName", is("Ferguson"))));
     }
 
+    @Test
+    void updatePatientTest() throws Exception {
+        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
+        patient = patientRepository.save(patient);
+        patient.setLastName("ferguson");
+        this.mockMvc.perform(get("/patient/update/ferguson")).andDo(print()).andExpect(status().isOk())
+                .andExpect(view().name("patientDto"))
+                .andExpect(model().attribute("patientDto", Matchers.hasProperty("lastName", is("ferguson"))));
+    }
 }

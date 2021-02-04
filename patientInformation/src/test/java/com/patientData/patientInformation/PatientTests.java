@@ -5,8 +5,6 @@ import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.repository.PatientRepository;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +31,15 @@ public class PatientTests {
         List<Patient> listResult = patientRepository.findAll();
         Assert.assertTrue(patient.getLastName().equals("Ferguson"));
         Assert.assertTrue(listResult.size() > 0);
+    }
+
+
+    @Test
+    public void updatePatientTest() {
+        Patient patient = new Patient("ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
+        patient = patientRepository.save(patient);
+        patient.setLastName("Ferguson");
+        patient = patientRepository.save(patient);
+        Assert.assertTrue(patient.getLastName().equals("Ferguson"));
     }
 }

@@ -15,7 +15,8 @@ public class PatientDto {
     private String lastName;
     @NotBlank(message = "First Name is mandatory")
     private String firstName;
-    @Past(message = "Date of birth is mandatory")
+    @NotNull(message = "Date of birth is mandatory")
+    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     @NotNull(message = "Sex is mandatory")
