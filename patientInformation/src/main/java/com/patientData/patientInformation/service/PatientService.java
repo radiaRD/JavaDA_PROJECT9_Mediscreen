@@ -54,5 +54,11 @@ public class PatientService implements IPatientService {
         model.addAttribute("patientDto", patientRepository.findAll());
     }
 
+    public void deletePatient(Integer id, Model model) {
+        Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
+        patientRepository.delete(patient);
+        model.addAttribute("patientDto", patientRepository.findAll());
+
+    }
 
 }

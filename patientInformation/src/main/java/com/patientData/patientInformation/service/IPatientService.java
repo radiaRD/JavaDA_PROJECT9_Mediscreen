@@ -16,4 +16,6 @@ public interface IPatientService {
 
     void validate(PatientDto patientDto, Patient patient, Model model);
 
+    void deletePatient(Integer id, Model model);
+
 }

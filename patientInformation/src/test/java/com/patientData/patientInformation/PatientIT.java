@@ -74,4 +74,16 @@ public class PatientIT {
                 .andExpect(model().attribute("patientDto", Matchers.hasSize(1)));
     }
 
+    @Test
+    void deletePatientTest() throws Exception {
+
+        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
+        patientRepository.save(patient);
+        Integer id = patient.getId();
+        this.mockMvc.perform(get("/patient/delete/"+id)).andDo(print())
+                .andExpect(redirectedUrl("/patient/list"));
+        this.mockMvc.perform(get("/patient/list")).andDo(print()).andExpect(status().isOk())
+                .andExpect(model().attribute("patientDto", Matchers.hasSize(0)));
+    }
+
 }

@@ -67,4 +67,9 @@ public class PatientController {
         }
         return "patientDtoAdd";
     }
+    @GetMapping("/patient/delete/{id}")
+    public String deletePatient(@PathVariable("id") Integer id, Model model) {
+        patientService.deletePatient(id, model);
+        return "redirect:/patient/list";
+    }
 }

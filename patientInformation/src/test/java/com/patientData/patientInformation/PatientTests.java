@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 
 @RunWith(SpringRunner.class)
@@ -49,5 +50,15 @@ public class PatientTests {
         patient = patientRepository.save(patient);
         Assert.assertNotNull(patient.getId());
         Assert.assertTrue(patient.getLastName().equals("Ferguson"));
+    }
+
+    @Test
+    public void deletePatientTest() {
+        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1398");
+        patient = patientRepository.save(patient);
+        Integer id = patient.getId();
+        patientRepository.delete(patient);
+        Optional<Patient> patientdelete = patientRepository.findById(id);
+        Assert.assertFalse(patientdelete.isPresent());
     }
 }
