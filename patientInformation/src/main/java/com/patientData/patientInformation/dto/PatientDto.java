@@ -1,6 +1,7 @@
 package com.patientData.patientInformation.dto;
 
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
@@ -22,6 +23,7 @@ public class PatientDto {
     @NotNull(message = "Sex is mandatory")
     private String sex;
     private String homeAddress;
+    //    @UniqueElements
     private String phoneNumber;
 
     public PatientDto() {

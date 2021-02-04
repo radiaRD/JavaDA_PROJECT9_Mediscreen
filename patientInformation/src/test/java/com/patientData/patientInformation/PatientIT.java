@@ -59,4 +59,19 @@ public class PatientIT {
                 .andExpect(view().name("patientDto"))
                 .andExpect(model().attribute("patientDto", Matchers.hasProperty("lastName", is("ferguson"))));
     }
+
+    @Test
+    public void addPatientTest() throws Exception {
+        this.mockMvc.perform(get("/patient/add")).andDo(print()).andExpect(status().isOk())
+                .andExpect(view().name("patientDtoAdd"));
+    }
+
+    @Test
+    public void validateTest() throws Exception {
+        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
+        patient = patientRepository.save(patient);
+        this.mockMvc.perform(get("/patient/list")).andDo(print()).andExpect(status().isOk())
+                .andExpect(model().attribute("patientDto", Matchers.hasSize(1)));
+    }
+
 }

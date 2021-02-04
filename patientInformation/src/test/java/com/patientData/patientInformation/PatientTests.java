@@ -42,4 +42,12 @@ public class PatientTests {
         patient = patientRepository.save(patient);
         Assert.assertTrue(patient.getLastName().equals("Ferguson"));
     }
+
+    @Test
+    public void addPatientTest() {
+        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
+        patient = patientRepository.save(patient);
+        Assert.assertNotNull(patient.getId());
+        Assert.assertTrue(patient.getLastName().equals("Ferguson"));
+    }
 }

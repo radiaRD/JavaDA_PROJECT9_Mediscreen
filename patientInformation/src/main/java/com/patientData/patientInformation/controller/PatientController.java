@@ -1,6 +1,9 @@
 package com.patientData.patientInformation.controller;
 
+import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
+import com.patientData.patientInformation.exception.ResourceNotFoundException;
+import com.patientData.patientInformation.repository.PatientRepository;
 import com.patientData.patientInformation.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,9 @@ public class PatientController {
 
     @Autowired
     private IPatientService patientService;
+
+    @Autowired
+    private PatientRepository patientRepository;
 
     @RequestMapping("/patient/list")
     public String home(Model model, PatientDto patientDto) {
@@ -41,5 +47,24 @@ public class PatientController {
         }
         patientService.updatePatient(lastName, patientDto, model);
         return "patientDtoList";
+    }
+
+    @GetMapping("/patient/add")
+    public String addPatient(PatientDto patientDto, Model model) {
+        patientService.addPatient(patientDto, model);
+        return "patientDtoAdd";
+    }
+
+    @PostMapping("/patient/validate")
+    public String validate(@Valid PatientDto patientDto, Patient patient, BindingResult result, Model model) {
+        if (!result.hasErrors()) {
+
+            if (patientRepository.findByPhoneNumber(patientDto.getPhoneNumber()) != null) {
+                throw new ResourceNotFoundException("Patient already exists with this phone number");
+            }
+            patientService.validate(patientDto, patient, model);
+            return "redirect:/patient/list";
+        }
+        return "patientDtoAdd";
     }
 }

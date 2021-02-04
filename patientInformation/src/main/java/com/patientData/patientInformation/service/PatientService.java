@@ -3,6 +3,7 @@ package com.patientData.patientInformation.service;
 
 import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
+import com.patientData.patientInformation.exception.ResourceNotFoundException;
 import com.patientData.patientInformation.repository.PatientRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,18 @@ public class PatientService implements IPatientService {
         patientRepository.save(patient);
         model.addAttribute("patientDto", patientRepository.findAll());
     }
+
+    public String addPatient(PatientDto patientDto, Model model) {
+        model.addAttribute("patientDtoAdd", patientDto);
+        return "patientDtoAdd";
+    }
+
+    @Override
+    public void validate(PatientDto patientDto, Patient patient, Model model) {
+        patient = modelMapper.map(patientDto, Patient.class);
+        patientRepository.save(patient);
+        model.addAttribute("patientDto", patientRepository.findAll());
+    }
+
 
 }
