@@ -4,11 +4,12 @@ package com.patientData.patientInformation.domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Past;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "patient")
+@Table(name = "patient", uniqueConstraints = @UniqueConstraint(columnNames = {"last_name", "first_name", "date_of_birth"}))
 public class Patient implements Serializable {
 
     @Id
@@ -20,19 +21,22 @@ public class Patient implements Serializable {
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "date_of_birth")
+    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     @Column(name = "sex")
     private String sex;
     @Column(name = "home_address")
     private String homeAddress;
-    @Column(name = "phone_number", unique = true)
+    @Column(name = "phone_number")
+    //,unique = true)
     private String phoneNumber;
 
     public Patient() {
     }
 
     public Patient(String lastName, String firstName, Date dateOfBirth, String sex, String homeAddress, String phoneNumber) {
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;
@@ -97,3 +101,4 @@ public class Patient implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 }
+

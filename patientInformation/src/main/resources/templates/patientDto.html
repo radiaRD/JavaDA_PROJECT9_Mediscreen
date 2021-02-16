@@ -14,7 +14,7 @@
     </div>
 
     <div class="row">
-        <form action="#" th:action="@{/patient/update/{lastName}(id=${patientDto.id})}" th:object="${patientDto}"
+        <form action="#" th:action="@{/patient/update/{id}(id=${patientDto.id})}" th:object="${patientDto}"
               method="post" class="form-horizontal" style="width: 100%">
             <div class="form-group">
                 <label for="lastName" class="col-sm-2 control-label">Last Name</label>

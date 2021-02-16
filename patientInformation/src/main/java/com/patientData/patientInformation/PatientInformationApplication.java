@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PatientInformationApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PatientInformationApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PatientInformationApplication.class, args);
+    }
 
 }

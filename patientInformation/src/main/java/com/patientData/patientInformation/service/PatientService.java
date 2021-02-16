@@ -3,7 +3,6 @@ package com.patientData.patientInformation.service;
 
 import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
-import com.patientData.patientInformation.exception.ResourceNotFoundException;
 import com.patientData.patientInformation.repository.PatientRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,16 +29,20 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public void showPatientByLastName(String lastName, Model model, PatientDto patientDto) {
-        Patient patient = patientRepository.findByLastName(lastName);
+    public void showPatientByLastName(Integer id, Model model, PatientDto patientDto) {
+        Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
         patientDto = modelMapper.map(patient, PatientDto.class);
         model.addAttribute("patientDto", patientDto);
     }
 
-    public void updatePatient(String lastName, PatientDto patientDto, Model model) {
+    public String updatePatient(Integer id, PatientDto patientDto, Model model) {
         Patient patient = modelMapper.map(patientDto, Patient.class);
+        if (patientRepository.findByLastName(patient.getLastName()).isPresent() && patientRepository.findByFirstName(patient.getFirstName()).isPresent() && patientRepository.findByDateOfBirth(patient.getDateOfBirth()).isPresent()) {
+            return "patientExist";
+        }
         patientRepository.save(patient);
         model.addAttribute("patientDto", patientRepository.findAll());
+        return "patientDtoList";
     }
 
     public String addPatient(PatientDto patientDto, Model model) {
@@ -48,17 +51,23 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public void validate(PatientDto patientDto, Patient patient, Model model) {
-        patient = modelMapper.map(patientDto, Patient.class);
+    public String validate(PatientDto patientDto, Model model) {
+        Patient patient = modelMapper.map(patientDto, Patient.class);
+        if (patientRepository.findByLastName(patient.getLastName()).isPresent() && patientRepository.findByFirstName(patient.getFirstName()).isPresent() && patientRepository.findByDateOfBirth(patient.getDateOfBirth()).isPresent()) {
+            return "patientExist";
+        }
         patientRepository.save(patient);
         model.addAttribute("patientDto", patientRepository.findAll());
+        return "patientDtoList";
     }
 
-    public void deletePatient(Integer id, Model model) {
-        Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
-        patientRepository.delete(patient);
-        model.addAttribute("patientDto", patientRepository.findAll());
-
+    public String deletePatient(Integer id, Model model, Patient patient) {
+        if (patientRepository.findById(id).isPresent()) {
+            patientRepository.delete(patient);
+            model.addAttribute("patientDto", patientRepository.findAll());
+            return "patientDtoList";
+        }
+        return "patientNotExist";
     }
 
 }

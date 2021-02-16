@@ -16,6 +16,7 @@ import java.util.Date;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -45,7 +46,8 @@ public class PatientIT {
     void showUpdateFormPatientTest() throws Exception {
         Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
         patient = patientRepository.save(patient);
-        this.mockMvc.perform(get("/patient/update/Ferguson")).andDo(print()).andExpect(status().isOk())
+        Integer id = patient.getId();
+        this.mockMvc.perform(get("/patient/update/" + id)).andDo(print()).andExpect(status().isOk())
                 .andExpect(view().name("patientDto"))
                 .andExpect(model().attribute("patientDto", Matchers.hasProperty("lastName", is("Ferguson"))));
     }
@@ -53,9 +55,17 @@ public class PatientIT {
     @Test
     void updatePatientTest() throws Exception {
         Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
-        patient = patientRepository.save(patient);
-        patient.setLastName("ferguson");
-        this.mockMvc.perform(get("/patient/update/ferguson")).andDo(print()).andExpect(status().isOk())
+        patientRepository.save(patient);
+        Integer id = patient.getId();
+        this.mockMvc.perform(post("/patient/update/" + id)
+                .param("lastName", "ferguson")
+                .param("firstName", "Lucas")
+                .param("dateOfBirth", "1968-06-22")
+                .param("sex", "M")
+                .param("homeAddress", "2 Warren Street")
+                .param("phoneNumber", "387-866-1399")
+                .contentType("text/html;charset=UTF-8"));
+        this.mockMvc.perform(get("/patient/update/" + id)).andDo(print()).andExpect(status().isOk())
                 .andExpect(view().name("patientDto"))
                 .andExpect(model().attribute("patientDto", Matchers.hasProperty("lastName", is("ferguson"))));
     }
@@ -68,8 +78,14 @@ public class PatientIT {
 
     @Test
     public void validateTest() throws Exception {
-        Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
-        patient = patientRepository.save(patient);
+        this.mockMvc.perform(post("/patient/validate")
+                .param("lastName", "Ferguson")
+                .param("firstName", "Lucas")
+                .param("dateOfBirth", "1968-06-22")
+                .param("sex", "M")
+                .param("homeAddress", "2 Warren Street")
+                .param("phoneNumber", "387-866-1399")
+                .contentType("text/html;charset=UTF-8"));
         this.mockMvc.perform(get("/patient/list")).andDo(print()).andExpect(status().isOk())
                 .andExpect(model().attribute("patientDto", Matchers.hasSize(1)));
     }
@@ -79,11 +95,13 @@ public class PatientIT {
 
         Patient patient = new Patient("Ferguson", "Lucas", new Date(1968 - 06 - 22), "M", "2 Warren Street ", "387-866-1399");
         patientRepository.save(patient);
+
         Integer id = patient.getId();
-        this.mockMvc.perform(get("/patient/delete/"+id)).andDo(print())
-                .andExpect(redirectedUrl("/patient/list"));
+        this.mockMvc.perform(get("/patient/delete/" + id)).andDo(print());
         this.mockMvc.perform(get("/patient/list")).andDo(print()).andExpect(status().isOk())
                 .andExpect(model().attribute("patientDto", Matchers.hasSize(0)));
+        this.mockMvc.perform(get("/patient/delete/1")).andDo(print())
+                .andExpect(view().name("patientNotExist"));
     }
 
 }

@@ -2,7 +2,6 @@ package com.patientData.patientInformation.controller;
 
 import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
-import com.patientData.patientInformation.exception.ResourceNotFoundException;
 import com.patientData.patientInformation.repository.PatientRepository;
 import com.patientData.patientInformation.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,21 +31,20 @@ public class PatientController {
         return "patientDtoList";
     }
 
-    @GetMapping("/patient/update/{lastName}")
-    public String showPatientByLastName(@PathVariable("lastName") String lastName, Model model, PatientDto patientDto) {
-        patientService.showPatientByLastName(lastName, model, patientDto);
+    @GetMapping("/patient/update/{id}")
+    public String showPatientByLastName(@PathVariable("id") Integer id, Model model, PatientDto patientDto) {
+        patientService.showPatientByLastName(id, model, patientDto);
         return "patientDto";
     }
 
-    @PostMapping("/patient/update/{lastName}")
-    public String updatePatient(@PathVariable("lastName") String lastName, @Valid PatientDto patientDto,
+    @PostMapping("/patient/update/{id}")
+    public String updatePatient(@PathVariable("id") Integer id, @Valid PatientDto patientDto,
                                 BindingResult result, Model model) {
 
-        if (result.hasErrors()) {
-            return "patientDto";
+        if (!result.hasErrors()) {
+            return patientService.updatePatient(id, patientDto, model);
         }
-        patientService.updatePatient(lastName, patientDto, model);
-        return "patientDtoList";
+        return "patientDto";
     }
 
     @GetMapping("/patient/add")
@@ -56,20 +54,15 @@ public class PatientController {
     }
 
     @PostMapping("/patient/validate")
-    public String validate(@Valid PatientDto patientDto, Patient patient, BindingResult result, Model model) {
+    public String validate(@Valid PatientDto patientDto, BindingResult result, Model model) {
         if (!result.hasErrors()) {
-
-            if (patientRepository.findByPhoneNumber(patientDto.getPhoneNumber()) != null) {
-                throw new ResourceNotFoundException("Patient already exists with this phone number");
-            }
-            patientService.validate(patientDto, patient, model);
-            return "redirect:/patient/list";
+            return patientService.validate(patientDto, model);
         }
         return "patientDtoAdd";
     }
+
     @GetMapping("/patient/delete/{id}")
-    public String deletePatient(@PathVariable("id") Integer id, Model model) {
-        patientService.deletePatient(id, model);
-        return "redirect:/patient/list";
+    public String deletePatient(@PathVariable("id") Integer id, Model model, Patient patient) {
+        return patientService.deletePatient(id, model, patient);
     }
 }
