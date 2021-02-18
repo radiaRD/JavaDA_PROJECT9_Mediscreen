@@ -9,4 +9,5 @@ public interface INotesService {
     void showNotesById(Long id, Model model, NotesDto notesDto);
     String updateNotes(Long id, NotesDto notesDto, Model model);
     void validate(NotesDto notesDto, Model model);
+    String deleteNote(Long id, Model model, Notes notes);
 }

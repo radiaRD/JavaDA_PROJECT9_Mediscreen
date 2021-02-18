@@ -46,10 +46,19 @@ public class NotesService implements INotesService {
         model.addAttribute("notesDto", notesRepository.findAll());
         return "notesDtoList";
     }
+
+    @Override
     public void validate(NotesDto notesDto, Model model) {
         Notes notes = modelMapper.map(notesDto, Notes.class);
         notes.setId(generateSequence.generateSequence(Notes.SEQUENCE_NAME));
         notesRepository.save(notes);
         model.addAttribute("notesDto", notesRepository.findAll());
+    }
+
+    @Override
+    public String deleteNote(Long id, Model model, Notes notes) {
+            notesRepository.delete(notes);
+            model.addAttribute("notesDto", notesRepository.findAll());
+            return "notesDtoList";
     }
 }

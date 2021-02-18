@@ -53,4 +53,9 @@ public class NotesController {
         }
         return "notesDtoAdd";
     }
+
+    @GetMapping("/notes/delete/{id}")
+    public String deleteNotes(@PathVariable("id") Long id, Model model,Notes notes) {
+        return notesService.deleteNote(id, model, notes);
+    }
 }
