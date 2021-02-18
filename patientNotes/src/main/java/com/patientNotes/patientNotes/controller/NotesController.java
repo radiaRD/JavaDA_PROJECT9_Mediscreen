@@ -39,4 +39,18 @@ public class NotesController {
         }
         return "notesDto";
     }
+
+    @GetMapping("/notes/add")
+    public String addNotes(NotesDto notes) {
+        return "notesDtoAdd";
+    }
+
+    @PostMapping("/notes/validate")
+    public String validate(@Valid NotesDto notesDto, BindingResult result, Model model) {
+        if (!result.hasErrors()) {
+            notesService.validate(notesDto, model);
+            return "redirect:/notes/list";
+        }
+        return "notesDtoAdd";
+    }
 }

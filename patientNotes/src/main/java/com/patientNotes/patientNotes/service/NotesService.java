@@ -23,6 +23,9 @@ public class NotesService implements INotesService {
     @Autowired
     NotesRepository notesRepository;
 
+    @Autowired
+    SequenceGeneratorService generateSequence;
+
     @Override
     public String home(Model model, NotesDto notesDto) {
         model.addAttribute("notesDto", notesRepository.findAll());
@@ -42,5 +45,11 @@ public class NotesService implements INotesService {
         notesRepository.save(notes);
         model.addAttribute("notesDto", notesRepository.findAll());
         return "notesDtoList";
+    }
+    public void validate(NotesDto notesDto, Model model) {
+        Notes notes = modelMapper.map(notesDto, Notes.class);
+        notes.setId(generateSequence.generateSequence(Notes.SEQUENCE_NAME));
+        notesRepository.save(notes);
+        model.addAttribute("notesDto", notesRepository.findAll());
     }
 }
