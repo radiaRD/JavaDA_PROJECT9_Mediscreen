@@ -1,34 +1,30 @@
-package com.patientNotes.patientNotes.model;
+package com.patientNotes.patientNotes.dto;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.data.annotation.Transient;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-
-import java.io.Serializable;
 import java.util.Date;
 
-@Document(collection = "notes")
-public class Notes implements Serializable {
-    @Transient
-    public static final String SEQUENCE_NAME = "users_sequence";
-
+public class NotesDto {
     @Id
     private long id;
+    @NotBlank(message = "Last name is mandatory")
     private String lastName;
+    @NotBlank(message = "First Name is mandatory")
     private String firstName;
+    @NotNull(message = "Date of birth is mandatory")
+    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     private String note;
 
-    public Notes() {
+    public NotesDto() {
     }
 
-    public Notes(String lastName, String firstName, Date dateOfBirth, String note) {
+    public NotesDto(String lastName, String firstName, Date dateOfBirth, String note) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;

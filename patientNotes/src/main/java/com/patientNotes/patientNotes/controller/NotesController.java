@@ -1,5 +1,6 @@
 package com.patientNotes.patientNotes.controller;
 
+import com.patientNotes.patientNotes.dto.NotesDto;
 import com.patientNotes.patientNotes.model.Notes;
 import com.patientNotes.patientNotes.service.INotesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,13 @@ import javax.validation.Valid;
 @Controller
 public class NotesController {
 
+    @Autowired
+    INotesService notesService;
 
+    @RequestMapping("/notes/list")
+    public String home(Model model, NotesDto notes) {
+        notesService.home(model, notes);
+        return "notesDtoList";
+    }
 
 }

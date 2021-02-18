@@ -19,18 +19,19 @@
                 <th>First Name</th>
                 <th>Date of birth</th>
                 <th>Note</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="notes : ${notes}">
-                <td style="width: 10%" th:text="${notes.id}"></td>
-                <td th:text="${notes.lastName}"></td>
-                <td th:text="${notes.firstName}"></td>
-                <td th:text="${notes.dateOfBirth}"></td>
-                <td th:text="${notes.note}"></td>
+            <tr th:each="notesDto : ${notesDto}">
+                <td style="width: 10%" th:text="${notesDto.id}"></td>
+                <td th:text="${notesDto.lastName}"></td>
+                <td th:text="${notesDto.firstName}"></td>
+                <td th:text="${notesDto.dateOfBirth}"></td>
+                <td th:text="${notesDto.note}"></td>
                 <td style="width: 15%" class="text-center">
-                    <a th:href="@{/notes/update/{id}(id=${notes.id})}">Edit</a>&nbsp;|&nbsp;
-                    <a th:href="@{/notes/delete/{id}(id=${notes.id})}">Delete</a>
+                    <a th:href="@{/notes/update/{id}(id=${notesDto.id})}">Edit</a>&nbsp;|&nbsp;
+                    <a th:href="@{/notes/delete/{id}(id=${notesDto.id})}">Delete</a>
                 </td>
             </tr>
             </tbody>
