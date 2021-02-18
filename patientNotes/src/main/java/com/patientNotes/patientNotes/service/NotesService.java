@@ -28,4 +28,19 @@ public class NotesService implements INotesService {
         model.addAttribute("notesDto", notesRepository.findAll());
         return "notesDtoList";
     }
+
+    @Override
+    public void showNotesById(Long id, Model model, NotesDto notesDto) {
+        Notes notes = notesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
+        notesDto = modelMapper.map(notes, NotesDto.class);
+        model.addAttribute("notesDto", notesDto);
+    }
+
+    @Override
+    public String updateNotes(Long id, NotesDto notesDto, Model model) {
+        Notes notes = modelMapper.map(notesDto, Notes.class);
+        notesRepository.save(notes);
+        model.addAttribute("notesDto", notesRepository.findAll());
+        return "notesDtoList";
+    }
 }
