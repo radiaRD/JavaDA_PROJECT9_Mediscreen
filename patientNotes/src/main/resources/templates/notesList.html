@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row"><h2>Notes List</h2></div>
+    <div class="row">
+        <a href="/notes/add" class="btn btn-primary btn-sm">Add New Note</a>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Date of birth</th>
+                <th>Note</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="notes : ${notes}">
+                <td style="width: 10%" th:text="${notes.id}"></td>
+                <td th:text="${notes.lastName}"></td>
+                <td th:text="${notes.firstName}"></td>
+                <td th:text="${notes.dateOfBirth}"></td>
+                <td th:text="${notes.note}"></td>
+                <td style="width: 15%" class="text-center">
+                    <a th:href="@{/notes/update/{id}(id=${notes.id})}">Edit</a>&nbsp;|&nbsp;
+                    <a th:href="@{/notes/delete/{id}(id=${notes.id})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
