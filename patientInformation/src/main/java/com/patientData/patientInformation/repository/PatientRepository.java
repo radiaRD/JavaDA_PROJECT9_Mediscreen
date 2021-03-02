@@ -10,11 +10,6 @@ package com.patientData.patientInformation.repository;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
-    Optional<Patient> findByLastName(String lastName);
+    Optional<Patient>findByLastNameAndFirstNameAndDateOfBirth(String lastName, String firstName, Date dateOfBirth);
 
-    Optional<Patient> findByFirstName(String firstName);
-
-    Optional<Patient> findByDateOfBirth(Date date);
-
-    Optional<Patient> findByPhoneNumber(String phoneNumber);
 }

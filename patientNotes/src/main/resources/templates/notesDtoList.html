@@ -8,9 +8,11 @@
 </head>
 <body>
 <div class="container">
-    <div class="row"><h2>Notes List</h2></div>
+    <div class="row"><h2>Notes Patient</h2></div>
     <div class="row">
-        <a href="/notes/add" class="btn btn-primary btn-sm">Add New Note</a>
+        <a href="/notes/add" class="btn btn-primary btn-sm">Add New Note</a>&nbsp;&nbsp;
+        <a href="/notes/list" class="btn btn-primary btn-sm">Notes List</a>&nbsp;
+        <a href="/notes/patient" class="btn btn-primary btn-sm">Notes Patient</a>
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -18,6 +20,8 @@
                 <th>Last Name</th>
                 <th>First Name</th>
                 <th>Date of birth</th>
+                <th>Age</th>
+                <th>Date</th>
                 <th>Note</th>
                 <th>Action</th>
             </tr>
@@ -27,11 +31,14 @@
                 <td style="width: 10%" th:text="${notesDto.id}"></td>
                 <td th:text="${notesDto.lastName}"></td>
                 <td th:text="${notesDto.firstName}"></td>
-                <td th:text="${notesDto.dateOfBirth}"></td>
+                <td th:text="${#dates.format(new java.util.Date(notesDto.dateOfBirth),'yyyy-MM-dd')}"></td>
+                <td th:text="${notesDto.age}"></td>
+                <td th:text="${notesDto.date}"></td>
                 <td th:text="${notesDto.note}"></td>
                 <td style="width: 15%" class="text-center">
                     <a th:href="@{/notes/update/{id}(id=${notesDto.id})}">Edit</a>&nbsp;|&nbsp;
                     <a th:href="@{/notes/delete/{id}(id=${notesDto.id})}">Delete</a>
+                    <a th:href="@{/notes/listPatient(lastName=${notesDto.lastName},firstName=${notesDto.firstName},dateOfBirth=${#dates.format(new java.util.Date(notesDto.dateOfBirth),'yyyy-MM-dd')})}">View</a>&nbsp;
                 </td>
             </tr>
             </tbody>
