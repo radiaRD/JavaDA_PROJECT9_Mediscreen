@@ -37,9 +37,6 @@ public class PatientService implements IPatientService {
 
     public String updatePatient(Integer id, PatientDto patientDto, Model model) {
         Patient patient = modelMapper.map(patientDto, Patient.class);
-        if (patientRepository.findByLastName(patient.getLastName()).isPresent() && patientRepository.findByFirstName(patient.getFirstName()).isPresent() && patientRepository.findByDateOfBirth(patient.getDateOfBirth()).isPresent()) {
-            return "patientExist";
-        }
         patientRepository.save(patient);
         model.addAttribute("patientDto", patientRepository.findAll());
         return "patientDtoList";
@@ -53,7 +50,7 @@ public class PatientService implements IPatientService {
     @Override
     public String validate(PatientDto patientDto, Model model) {
         Patient patient = modelMapper.map(patientDto, Patient.class);
-        if (patientRepository.findByLastName(patient.getLastName()).isPresent() && patientRepository.findByFirstName(patient.getFirstName()).isPresent() && patientRepository.findByDateOfBirth(patient.getDateOfBirth()).isPresent()) {
+        if (patientRepository.findByLastNameAndFirstNameAndDateOfBirth(patientDto.getLastName(),patientDto.getFirstName(),patientDto.getDateOfBirth()).isPresent()) {
             return "patientExist";
         }
         patientRepository.save(patient);

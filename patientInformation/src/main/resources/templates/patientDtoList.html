@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row"><h2>Patient List</h2></div>
     <div class="row">
-        <a href="/patient/add" class="btn btn-primary btn-sm">Add New</a>
+        <a href="/patient/add" class="btn btn-primary btn-sm">Add New Patient</a>
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -29,7 +29,7 @@
                 <td style="width: 10%" th:text="${patientDto.id}"></td>
                 <td th:text="${patientDto.lastName}"></td>
                 <td th:text="${patientDto.firstName}"></td>
-                <td th:text="${patientDto.dateOfBirth}"></td>
+                <td th:text="${#dates.format(new java.util.Date(patientDto.dateOfBirth),'yyyy-MM-dd')}"></td>
                 <td th:text="${patientDto.sex}"></td>
                 <td th:text="${patientDto.homeAddress}"></td>
                 <td th:text="${patientDto.phoneNumber}"></td>

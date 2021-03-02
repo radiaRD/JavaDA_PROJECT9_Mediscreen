@@ -10,12 +10,13 @@
 <div class="container">
 
     <div class="row">
-        <h2>Notes</h2>
+        <h2>Patient Notes</h2>
     </div>
 
     <div class="row">
-        <form action="#" th:action="@{/notes/update/{id}(id=${notesDto.id})}" th:object="${notesDto}"
-              method="post" class="form-horizontal" style="width: 100%">
+        <form action="#" th:action="@{/notes/listPatient}" th:object="${notesDto}" method="post"
+              class="form-horizontal"
+              style="width: 100%">
             <div class="form-group">
                 <label for="lastName" class="col-sm-2 control-label">Last Name</label>
                 <div class="col-sm-10">
@@ -38,20 +39,11 @@
                     <p class="text-danger" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></p>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="note" class="col-sm-2 control-label">Note</label>
-                <div class="col-sm-10">
-                   <textarea type="text" style="height:100px;" th:field="*{note}" id="note" placeholder="Note"
-                           class="col-10"></textarea>
-                    <p class="text-danger" th:if="${#fields.hasErrors('note')}" th:errors="*{note}"></p>
-                </div>
-            </div>
-
 
             <div class="form-group">
                 <div class="col-sm-12">
                     <a class="btn btn-danger btn-sm" href="/notes/list">Cancel</a>
-                    <input class="btn btn-primary btn-sm" type="submit" value="Update note">
+                    <input class="btn btn-primary btn-sm" type="submit" value="patient Notes">
                 </div>
             </div>
         </form>

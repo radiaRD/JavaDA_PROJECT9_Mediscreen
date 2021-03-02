@@ -88,6 +88,15 @@ public class PatientIT {
                 .contentType("text/html;charset=UTF-8"));
         this.mockMvc.perform(get("/patient/list")).andDo(print()).andExpect(status().isOk())
                 .andExpect(model().attribute("patientDto", Matchers.hasSize(1)));
+        this.mockMvc.perform(post("/patient/validate")
+                .param("lastName", "Ferguson")
+                .param("firstName", "Lucas")
+                .param("dateOfBirth", "1968-06-22")
+                .param("sex", "M")
+                .param("homeAddress", "2 Warren Street")
+                .param("phoneNumber", "387-866-1399")
+                .contentType("text/html;charset=UTF-8"))
+                .andExpect(view().name("patientExist"));
     }
 
     @Test
