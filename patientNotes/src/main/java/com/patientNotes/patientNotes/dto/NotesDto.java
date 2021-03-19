@@ -1,7 +1,5 @@
 package com.patientNotes.patientNotes.dto;
 
-
-import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -9,8 +7,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.util.Date;
-
-
 
 public class NotesDto {
     @Id
@@ -23,8 +19,6 @@ public class NotesDto {
     @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
-    private int age;
-    private LocalDateTime updateNoteDate = LocalDateTime.now();
     private String note;
 
     public NotesDto() {
@@ -69,28 +63,12 @@ public class NotesDto {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    public LocalDateTime getDate() {
-        return updateNoteDate;
-    }
-
-    public void setDate(LocalDateTime updateNoteDate) {
-        this.updateNoteDate = updateNoteDate;
     }
 
     @Override

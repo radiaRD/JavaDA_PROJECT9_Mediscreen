@@ -32,8 +32,8 @@ public class PatientController {
     }
 
     @GetMapping("/patient/update/{id}")
-    public String showPatientByLastName(@PathVariable("id") Integer id, Model model, PatientDto patientDto) {
-        patientService.showPatientByLastName(id, model, patientDto);
+    public String showPatientById(@PathVariable("id") Integer id, Model model, PatientDto patientDto) {
+        patientService.showPatientById(id, model, patientDto);
         return "patientDto";
     }
 
@@ -65,4 +65,5 @@ public class PatientController {
     public String deletePatient(@PathVariable("id") Integer id, Model model, Patient patient) {
         return patientService.deletePatient(id, model, patient);
     }
+
 }

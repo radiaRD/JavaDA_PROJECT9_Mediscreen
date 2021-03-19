@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 public interface IPatientService {
     String home(Model model, PatientDto patientDto);
 
-    void showPatientByLastName(Integer id, Model model, PatientDto patientDto);
+    void showPatientById(Integer id, Model model, PatientDto patientDto);
 
     String updatePatient(Integer id, PatientDto patientDto, Model model);
 

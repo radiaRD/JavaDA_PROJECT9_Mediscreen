@@ -1,17 +1,28 @@
 version: "3"
 services:
+  patient-jdbc:
+    image: patient-jdbc
+    ports:
+      - "8080:8080"
+    networks:
+      - patient-mysql
+    depends_on:
+      - db
   db:
     image: mysql:8
+    networks:
+      - patient-mysql
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: 'rootroot'
+      MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_DATABASE: 'patientdata'
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'rootroot'
       ports:
-        3307:3306
+        3306:3306
       expose:
-        "3307"
-
+        "3306"
+networks:
+  patient-mysql:
 
 

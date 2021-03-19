@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row"><h2>Patient Risk</h2></div>
+    <div class="row">
+        <a href="/patient/risk" class="btn btn-primary btn-sm">Patient</a>&nbsp;&nbsp;
+        <a href="/patient/list" class="btn btn-primary btn-sm">Patient List</a>&nbsp;&nbsp;
+        <a href="/patient/notes" class="btn btn-primary btn-sm">Patient Notes</a>&nbsp;
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Date of birth</th>
+                <th>Sex</th>
+                <th>Home address</th>
+                <th>Phone number</th>
+                <th>Risk Level</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="patientAssessmentDto : ${patientAssessmentDto}">
+                <td th:text="${patientAssessmentDto.lastName}"></td>
+                <td th:text="${patientAssessmentDto.firstName}"></td>
+                <td th:text="${#dates.format(new java.util.Date(patientAssessmentDto.dateOfBirth),'yyyy-MM-dd')}"></td>
+                <td th:text="${patientAssessmentDto.sex}"></td>
+                <td th:text="${patientAssessmentDto.homeAddress}"></td>
+                <td th:text="${patientAssessmentDto.phoneNumber}"></td>
+                <td th:text="${patientAssessmentDto.riskLevel}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

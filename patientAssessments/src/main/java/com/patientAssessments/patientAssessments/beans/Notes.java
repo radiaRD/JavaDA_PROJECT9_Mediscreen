@@ -1,39 +1,32 @@
-package com.patientNotes.patientNotes.model;
+package com.patientAssessments.patientAssessments.beans;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.data.annotation.Transient;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
-@Document(collection = "notes")
-public class Notes implements Serializable {
-    @Transient
-    public static final String SEQUENCE_NAME = "users_sequence";
-
-    @Id
+public class Notes  implements Serializable {
     private long id;
     private String lastName;
     private String firstName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
+    private int age;
+    private LocalDate updateNoteDate;
     private String note;
 
     public Notes() {
     }
 
-    public Notes(String lastName, String firstName, Date dateOfBirth, String note) {
+    public Notes(String lastName, String firstName, Date dateOfBirth,int age, String note) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;
+        this.age = age;
         this.note = note;
     }
+
 
     public long getId() {
         return id;
@@ -67,12 +60,28 @@ public class Notes implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public LocalDate getDate() {
+        return updateNoteDate;
+    }
+
+    public void setDate(LocalDate updateNoteDate) {
+        this.updateNoteDate = updateNoteDate;
     }
 
     @Override
@@ -85,4 +94,5 @@ public class Notes implements Serializable {
                 ", note='" + note + '\'' +
                 '}';
     }
+
 }
