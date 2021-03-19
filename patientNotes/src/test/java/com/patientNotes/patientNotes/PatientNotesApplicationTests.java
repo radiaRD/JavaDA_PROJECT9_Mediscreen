@@ -13,17 +13,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 
 import org.junit.Assert;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@ActiveProfiles("test")
 class PatientNotesApplicationTests {
 
     SimpleDateFormat textFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -96,4 +99,5 @@ class PatientNotesApplicationTests {
         Optional<Notes> patientdelete = notesRepository.findById(id);
         Assert.assertFalse(patientdelete.isPresent());
     }
+    
 }

@@ -29,7 +29,7 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public void showPatientByLastName(Integer id, Model model, PatientDto patientDto) {
+    public void showPatientById(Integer id, Model model, PatientDto patientDto) {
         Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
         patientDto = modelMapper.map(patient, PatientDto.class);
         model.addAttribute("patientDto", patientDto);

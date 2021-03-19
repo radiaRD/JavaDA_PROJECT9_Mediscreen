@@ -1,34 +1,18 @@
-package com.patientData.patientInformation.domain;
-
+package com.patientAssessments.patientAssessments.beans;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.Past;
-import java.io.Serializable;
 import java.util.Date;
 
-@Entity
-@Table(name = "patient", uniqueConstraints = @UniqueConstraint(columnNames = {"last_name", "first_name", "date_of_birth"}))
-public class Patient implements Serializable {
+public class Patient {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "date_of_birth")
-    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
-    @Column(name = "sex")
     private String sex;
-    @Column(name = "home_address")
     private String homeAddress;
-    @Column(name = "phone_number")
     private String phoneNumber;
 
     public Patient() {
@@ -100,4 +84,3 @@ public class Patient implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 }
-

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row"><h2>Notes Patient</h2></div>
+    <div class="row">
+        <a href="/patient/risk" class="btn btn-primary btn-sm">Patient</a>&nbsp;&nbsp;
+        <a href="/patient/list" class="btn btn-primary btn-sm">Patient List</a>&nbsp;
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+                <th>Date</th>
+                <th>Note</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="patientAssessmentDto : ${patientAssessmentDto}">
+                <td th:text="${patientAssessmentDto.lastName}"></td>
+                <td th:text="${patientAssessmentDto.firstName}"></td>
+                <td th:text="${#dates.format(new java.util.Date(patientAssessmentDto.dateOfBirth),'yyyy-MM-dd')}"></td>
+                <td th:text="${patientAssessmentDto.age}"></td>
+                <td th:text="${patientAssessmentDto.date}"></td>
+                <td th:text="${patientAssessmentDto.note}"></td>
+                <td style="width: 15%" class="text-center">
+                    &nbsp;<a th:href="@{/assessment/patient/risk(lastName=${patientAssessmentDto.lastName},firstName=${patientAssessmentDto.firstName},dateOfBirth=${#dates.format(new java.util.Date(patientAssessmentDto.dateOfBirth),'yyyy-MM-dd')})}">Patient Risk</a>
+                    &nbsp;<a th:href="@{/patient/notes/list(lastName=${patientAssessmentDto.lastName},firstName=${patientAssessmentDto.firstName},dateOfBirth=${#dates.format(new java.util.Date(patientAssessmentDto.dateOfBirth),'yyyy-MM-dd')})}">View</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

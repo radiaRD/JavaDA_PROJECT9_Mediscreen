@@ -1,21 +1,12 @@
-package com.patientNotes.patientNotes.model;
+package com.patientAssessments.patientAssessments.beans;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.data.annotation.Transient;
-
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Document(collection = "notes")
-public class Notes implements Serializable {
-    @Transient
-    public static final String SEQUENCE_NAME = "users_sequence";
-
-    @Id
+public class Notes  implements Serializable {
     private long id;
     private String lastName;
     private String firstName;
@@ -28,12 +19,14 @@ public class Notes implements Serializable {
     public Notes() {
     }
 
-    public Notes(String lastName, String firstName, Date dateOfBirth, String note) {
+    public Notes(String lastName, String firstName, Date dateOfBirth,int age, String note) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;
+        this.age = age;
         this.note = note;
     }
+
 
     public long getId() {
         return id;
@@ -101,4 +94,5 @@ public class Notes implements Serializable {
                 ", note='" + note + '\'' +
                 '}';
     }
+
 }

@@ -8,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -24,7 +26,7 @@ public class NotesDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     private int age;
-    private LocalDateTime updateNoteDate = LocalDateTime.now();
+    private LocalDate updateNoteDate = LocalDate.now();
     private String note;
 
     public NotesDto() {
@@ -85,11 +87,11 @@ public class NotesDto {
         this.note = note;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return updateNoteDate;
     }
 
-    public void setDate(LocalDateTime updateNoteDate) {
+    public void setDate(LocalDate updateNoteDate) {
         this.updateNoteDate = updateNoteDate;
     }
 
