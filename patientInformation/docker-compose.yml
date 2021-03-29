@@ -1,28 +1,35 @@
-version: "3"
+version: '3'
+
 services:
   patient-jdbc:
-    image: patient-jdbc
+    build:
+      context: .
+      dockerfile: Dockerfile
+  #  image: patient-jdbc
+    container_name: patient-jdbc
     ports:
-      - "8080:8080"
-    networks:
-      - patient-mysql
+      - '8081:8081'
+    #restart: always
     depends_on:
       - db
+  #  networks:
+  #    - default
+
+  # Database Service (Mysql)
   db:
-    image: mysql:8
-    networks:
-      - patient-mysql
+    image: mysql:latest
     container_name: db
+    ports:
+      - '3307:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_DATABASE: 'patientdata'
-      MYSQL_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'rootroot'
+     # MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'rootroot'
-      ports:
-        3306:3306
-      expose:
-        "3306"
-networks:
-  patient-mysql:
+
+  #  networks:
+  #    - default
+#networks:
+  #default:
 
 

@@ -2,6 +2,7 @@ package com.patientNotes.patientNotes.controller;
 
 import com.patientNotes.patientNotes.dto.NotesDto;
 import com.patientNotes.patientNotes.model.Notes;
+import com.patientNotes.patientNotes.repository.NotesRepository;
 import com.patientNotes.patientNotes.service.INotesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,6 +20,9 @@ public class NotesController {
 
     @Autowired
     INotesService notesService;
+
+    @Autowired
+    NotesRepository notesRepository;
 
     @RequestMapping("/notes/list")
     public String home(Model model, NotesDto notes) {
@@ -69,6 +73,7 @@ public class NotesController {
 
     @GetMapping("/notes/delete/{id}")
     public String deleteNotes(@PathVariable("id") Long id, Model model,Notes notes) {
+        notesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid note Id:" + id));
         return notesService.deleteNote(id, model, notes);
     }
 }

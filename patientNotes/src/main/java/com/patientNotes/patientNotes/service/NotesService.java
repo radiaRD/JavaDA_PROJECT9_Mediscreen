@@ -41,7 +41,7 @@ public class NotesService implements INotesService {
 
     @Override
     public void showNotesById(Long id, Model model, NotesDto notesDto) {
-        Notes notes = notesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
+        Notes notes = notesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid note Id:" + id));
         notesDto = modelMapper.map(notes, NotesDto.class);
         model.addAttribute("notesDto", notesDto);
     }
@@ -97,7 +97,6 @@ public class NotesService implements INotesService {
     }
 
     public List<Notes> updatepatient(Long id, Notes notes) {
-        notes = notesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
         List<Notes> notesList = notesRepository.findByLastNameAndFirstNameAndDateOfBirth(notes.getLastName(), notes.getFirstName(), notes.getDateOfBirth());
         return notesList;
     }

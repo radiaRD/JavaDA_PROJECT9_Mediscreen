@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import javax.transaction.Transactional;
 import java.util.Date;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -115,4 +116,25 @@ public class PatientIT {
                 .andExpect(view().name("patientNotExist"));
     }
 
+    @Test
+    void getPatientListTest() throws Exception {
+
+        this.mockMvc.perform(get("/patientlist")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
+    }
+
+    @Test
+    void patientTest() throws Exception {
+
+        this.mockMvc.perform(post("/patient/validate")
+                .param("lastName", "Ferguson")
+                .param("firstName", "Lucas")
+                .param("dateOfBirth", "1968-06-22")
+                .param("sex", "M")
+                .param("homeAddress", "2 Warren Street")
+                .param("phoneNumber", "387-866-1399")
+                .contentType("text/html;charset=UTF-8"));
+        this.mockMvc.perform(get("/patient?lastName=Ferguson&firstName=Lucas&dateOfBirth=1968-06-22")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$.lastName", is("Ferguson")));
+    }
 }

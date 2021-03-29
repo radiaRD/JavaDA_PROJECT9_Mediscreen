@@ -10,16 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-<<<<<<< HEAD
-=======
 import org.springframework.test.context.ActiveProfiles;
->>>>>>> develop
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -28,10 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-<<<<<<< HEAD
-=======
 @ActiveProfiles("test")
->>>>>>> develop
 public class PatientNotesTestIT {
 
     SimpleDateFormat textFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -55,7 +50,7 @@ public class PatientNotesTestIT {
     void homeTest() throws Exception {
         this.mockMvc.perform(get("/notes/list")).andDo(print()).andExpect(status().isOk())
                 .andExpect(view().name("notesDtoList"))
-                .andExpect(model().attribute("notesDto", Matchers.hasSize(0)));
+                .andExpect(model().attribute("notesDto", hasSize(0)));
     }
 
     @Test
@@ -74,7 +69,7 @@ public class PatientNotesTestIT {
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("notesDtoList"))
-                .andExpect(model().attribute("notesDto", Matchers.hasSize(1)));
+                .andExpect(model().attribute("notesDto", hasSize(1)));
     }
 
     @Test
@@ -124,7 +119,7 @@ public class PatientNotesTestIT {
                 .param("note", "note")
                 .contentType("text/html;charset=UTF-8"));
         this.mockMvc.perform(get("/notes/list")).andDo(print()).andExpect(status().isOk())
-                .andExpect(model().attribute("notesDto", Matchers.hasSize(1)));
+                .andExpect(model().attribute("notesDto", hasSize(1)));
     }
 
     @Test
@@ -137,7 +132,25 @@ public class PatientNotesTestIT {
         Long id = notes.getId();
         this.mockMvc.perform(get("/notes/delete/" + id)).andDo(print());
         this.mockMvc.perform(get("/notes/list")).andDo(print()).andExpect(status().isOk())
-                .andExpect(model().attribute("notesDto", Matchers.hasSize(0)));
+                .andExpect(model().attribute("notesDto", hasSize(0)));
     }
 
+
+    @Test
+    void getNoteListTest() throws Exception {
+
+        this.mockMvc.perform(get("/notesList")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
+    }
+
+    @Test
+    void getNotePatientTest() throws Exception {
+        dateOfBirth = textFormat.parse("1968-06-22");
+        Notes notes = new Notes("Ferguson", "Lucas", dateOfBirth, "note");
+        notes.setId(generateSequence.generateSequence(Notes.SEQUENCE_NAME));
+        notes.setAge(52);
+        notes = notesRepository.save(notes);
+        this.mockMvc.perform(get("/noteslistPatient?lastName=Ferguson&firstName=Lucas&dateOfBirth=1968-06-22")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].lastName", is("Ferguson")));
+    }
 }

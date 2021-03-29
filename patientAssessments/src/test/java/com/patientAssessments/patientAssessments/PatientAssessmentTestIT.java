@@ -38,13 +38,12 @@ public class PatientAssessmentTestIT {
     PatientNotesProxy patientNotesProxy;
     String pattern = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
+    List<Notes> notes = new ArrayList();
     PatientAssessmentsService patientAssessmentsService;
 
     @BeforeEach
     private void setUpPerTest() throws ParseException {
         Date dateOfBirth = simpleDateFormat.parse("1968-06-22");
-        List<Notes> notes = new ArrayList();
         Notes note = new Notes("Ferguson", "Lucas", dateOfBirth, 52, "Hémoglobine A1C,Microalbumine,Taille,Poids,Cholestérol,Réaction");
         Notes note1 = new Notes("Ferguson", "Lucas", dateOfBirth, 52, "notes");
         notes.add(note);

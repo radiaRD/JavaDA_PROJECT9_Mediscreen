@@ -1,15 +1,15 @@
 package com.patientNotes.patientNotes.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.data.annotation.Transient;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Document(collection = "notes")
@@ -23,6 +23,8 @@ public class Notes implements Serializable {
     private String firstName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
+    private int age;
+    private LocalDate updateNoteDate;
     private String note;
 
     public Notes() {
@@ -67,12 +69,28 @@ public class Notes implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public LocalDate getDate() {
+        return updateNoteDate;
+    }
+
+    public void setDate(LocalDate updateNoteDate) {
+        this.updateNoteDate = updateNoteDate;
     }
 
     @Override

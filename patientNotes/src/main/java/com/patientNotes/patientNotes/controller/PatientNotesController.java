@@ -26,7 +26,8 @@ public class PatientNotesController {
     @RequestMapping("/noteslistPatient")
     public List<Notes> listNotesPatient(@RequestParam(value = "lastName") String lastName , @RequestParam(value ="firstName") String firstName, @RequestParam(value ="dateOfBirth")@DateTimeFormat(pattern="yyyy-MM-dd") Date dateOfBirth, Model model) {
         if(notesRepository.findByLastNameAndFirstNameAndDateOfBirth(lastName,firstName,dateOfBirth)!= null){
-       return notesRepository.findByLastNameAndFirstNameAndDateOfBirth(lastName,firstName,dateOfBirth);}
+       return notesRepository.findByLastNameAndFirstNameAndDateOfBirth(lastName,firstName,dateOfBirth);
+        }
         return null;
     }
 }
