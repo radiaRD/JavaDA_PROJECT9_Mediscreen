@@ -1,7 +1,8 @@
 package com.patientNotes.patientNotes.dto;
 
 
-import org.joda.time.LocalDateTime;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,8 +13,8 @@ import java.time.LocalDate;
 import java.util.Date;
 
 
-
 public class NotesDto {
+    private static final Logger logger = LogManager.getLogger(NotesDto.class);
     @Id
     private long id;
     @NotBlank(message = "Last name is mandatory")

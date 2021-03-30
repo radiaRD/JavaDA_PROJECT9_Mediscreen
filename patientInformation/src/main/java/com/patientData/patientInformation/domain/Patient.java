@@ -1,6 +1,8 @@
 package com.patientData.patientInformation.domain;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -11,6 +13,7 @@ import java.util.Date;
 @Entity
 @Table(name = "patient", uniqueConstraints = @UniqueConstraint(columnNames = {"last_name", "first_name", "date_of_birth"}))
 public class Patient implements Serializable {
+    private static final Logger logger = LogManager.getLogger(Patient.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

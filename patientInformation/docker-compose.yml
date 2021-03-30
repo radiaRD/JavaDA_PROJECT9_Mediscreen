@@ -24,7 +24,7 @@ services:
     environment:
       MYSQL_DATABASE: 'patientdata'
       MYSQL_ROOT_PASSWORD: 'rootroot'
-     # MYSQL_USER: 'root'
+      #MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'rootroot'
 
   #  networks:

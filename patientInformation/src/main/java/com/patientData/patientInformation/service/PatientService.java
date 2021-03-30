@@ -4,6 +4,8 @@ package com.patientData.patientInformation.service;
 import com.patientData.patientInformation.domain.Patient;
 import com.patientData.patientInformation.dto.PatientDto;
 import com.patientData.patientInformation.repository.PatientRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,7 @@ import java.util.List;
 
 @Service
 public class PatientService implements IPatientService {
-
+    private static final Logger logger = LogManager.getLogger(PatientService.class);
     @Autowired
     private PatientRepository patientRepository;
     @Autowired
@@ -50,7 +52,7 @@ public class PatientService implements IPatientService {
     @Override
     public String validate(PatientDto patientDto, Model model) {
         Patient patient = modelMapper.map(patientDto, Patient.class);
-        if (patientRepository.findByLastNameAndFirstNameAndDateOfBirth(patientDto.getLastName(),patientDto.getFirstName(),patientDto.getDateOfBirth()).isPresent()) {
+        if (patientRepository.findByLastNameAndFirstNameAndDateOfBirth(patientDto.getLastName(), patientDto.getFirstName(), patientDto.getDateOfBirth()).isPresent()) {
             return "patientExist";
         }
         patientRepository.save(patient);

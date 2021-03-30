@@ -1,6 +1,9 @@
 package com.patientData.patientInformation.dto;
 
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
@@ -9,6 +12,7 @@ import java.util.Date;
 
 
 public class PatientDto {
+    private static final Logger logger = LogManager.getLogger(PatientDto.class);
 
     private Integer id;
     @NotBlank(message = "Last name is mandatory")

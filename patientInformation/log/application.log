@@ -1,0 +1,104 @@
+2021-03-30T10:54:30.969+0200 INFO Initializing Application
+2021-03-30T10:54:31.373+0200 INFO Initializing Application
+2021-03-30T10:54:32.331+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T10:54:32.400+0200 INFO Starting PatientInformationApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 29956 (D:\projetoc9\patientInformation\target\classes started by USER in D:\projetoc9\patientInformation)
+2021-03-30T10:54:32.442+0200 INFO The following profiles are active: dev
+2021-03-30T10:54:32.621+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T10:54:32.622+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T10:54:35.072+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-30T10:54:35.163+0200 INFO Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interfaces.
+2021-03-30T10:54:36.850+0200 INFO Tomcat initialized with port(s): 8081 (http)
+2021-03-30T10:54:36.871+0200 INFO Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30T10:54:36.871+0200 INFO Starting service [Tomcat]
+2021-03-30T10:54:36.872+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T10:54:37.051+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T10:54:37.053+0200 INFO Root WebApplicationContext: initialization completed in 4429 ms
+2021-03-30T10:54:37.660+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-30T10:54:37.769+0200 INFO HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-30T10:54:38.041+0200 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-30T10:54:38.243+0200 INFO HikariPool-1 - Starting...
+2021-03-30T10:54:38.626+0200 INFO HikariPool-1 - Start completed.
+2021-03-30T10:54:38.652+0200 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-03-30T10:54:40.647+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-30T10:54:40.658+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-30T10:54:40.682+0200 INFO LiveReload server is running on port 35729
+2021-03-30T10:54:41.649+0200 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-30T10:54:41.866+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T10:54:42.570+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T10:54:42.625+0200 INFO Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30T10:54:42.663+0200 INFO Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30T10:54:42.690+0200 INFO Started PatientInformationApplication in 11.299 seconds (JVM running for 13.539)
+2021-03-30T11:14:59.484+0200 INFO Initializing Application
+2021-03-30T11:14:59.871+0200 INFO Initializing Application
+2021-03-30T11:15:00.813+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T11:15:00.936+0200 INFO Starting PatientInformationApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 9864 (D:\projetoc9\patientInformation\target\classes started by USER in D:\projetoc9\patientInformation)
+2021-03-30T11:15:00.957+0200 INFO The following profiles are active: dev
+2021-03-30T11:15:01.120+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T11:15:01.121+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T11:15:03.635+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-30T11:15:03.719+0200 INFO Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interfaces.
+2021-03-30T11:15:05.344+0200 INFO Tomcat initialized with port(s): 8081 (http)
+2021-03-30T11:15:05.372+0200 INFO Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30T11:15:05.374+0200 INFO Starting service [Tomcat]
+2021-03-30T11:15:05.375+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T11:15:05.604+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T11:15:05.604+0200 INFO Root WebApplicationContext: initialization completed in 4479 ms
+2021-03-30T11:15:06.185+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-30T11:15:06.399+0200 INFO HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-30T11:15:06.737+0200 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-30T11:15:06.966+0200 INFO HikariPool-1 - Starting...
+2021-03-30T11:15:07.374+0200 INFO HikariPool-1 - Start completed.
+2021-03-30T11:15:07.405+0200 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-03-30T11:15:09.048+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-30T11:15:09.062+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-30T11:15:09.092+0200 INFO LiveReload server is running on port 35729
+2021-03-30T11:15:10.099+0200 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-30T11:15:10.339+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T11:15:11.106+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T11:15:11.167+0200 INFO Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30T11:15:11.206+0200 INFO Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30T11:15:11.234+0200 INFO Started PatientInformationApplication in 11.344 seconds (JVM running for 13.362)
+2021-03-30T11:15:15.885+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30T11:15:15.886+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-03-30T11:15:15.887+0200 INFO Completed initialization in 1 ms
+2021-03-30T11:15:15.999+0200 INFO Get patient List
+2021-03-30T11:15:28.515+0200 INFO Show patient by id1
+2021-03-30T12:09:30.391+0200 INFO Initializing Application
+2021-03-30T12:09:30.854+0200 INFO Initializing Application
+2021-03-30T12:09:32.191+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T12:09:32.254+0200 INFO Starting PatientInformationApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 27304 (D:\projetoc9\patientInformation\target\classes started by USER in D:\projetoc9\patientInformation)
+2021-03-30T12:09:32.259+0200 INFO The following profiles are active: dev
+2021-03-30T12:09:32.568+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T12:09:32.569+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T12:09:35.951+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-30T12:09:36.047+0200 INFO Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interfaces.
+2021-03-30T12:09:37.962+0200 INFO Tomcat initialized with port(s): 8081 (http)
+2021-03-30T12:09:37.983+0200 INFO Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30T12:09:37.985+0200 INFO Starting service [Tomcat]
+2021-03-30T12:09:37.986+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T12:09:38.179+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T12:09:38.179+0200 INFO Root WebApplicationContext: initialization completed in 5608 ms
+2021-03-30T12:09:39.036+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-30T12:09:39.209+0200 INFO HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-30T12:09:39.620+0200 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-30T12:09:39.949+0200 INFO HikariPool-1 - Starting...
+2021-03-30T12:09:40.753+0200 INFO HikariPool-1 - Start completed.
+2021-03-30T12:09:40.790+0200 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-03-30T12:09:44.531+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-30T12:09:44.544+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-30T12:09:44.569+0200 WARN Unable to start LiveReload server
+2021-03-30T12:09:45.488+0200 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-30T12:09:45.717+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T12:09:46.558+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T12:09:46.605+0200 INFO Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30T12:09:46.642+0200 INFO Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30T12:09:46.673+0200 INFO Started PatientInformationApplication in 15.8 seconds (JVM running for 20.252)
+2021-03-30T12:10:04.039+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30T12:10:04.041+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-03-30T12:10:04.047+0200 INFO Completed initialization in 6 ms
+2021-03-30T12:10:04.095+0200 INFO Get patient list
+2021-03-30T12:10:41.689+0200 INFO Get patient by last name = Ferguson first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.769+0200 INFO Get patient by last name = Ferguson first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.781+0200 INFO Get patient by last name = Ferguson first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.792+0200 INFO Get patient by last name = Ferguson first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.803+0200 INFO Get patient by last name = Ferguson first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968

@@ -1,10 +1,13 @@
 package com.patientAssessments.patientAssessments.dto;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 public class PatientAssessmentDto {
+    private static final Logger logger = LogManager.getLogger(PatientAssessmentDto.class);
 
     private String lastName;
     private String firstName;

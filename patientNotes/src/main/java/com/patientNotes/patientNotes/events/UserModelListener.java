@@ -1,14 +1,17 @@
 package com.patientNotes.patientNotes.events;
 
-import com.patientNotes.patientNotes.model.Notes;
-import com.patientNotes.patientNotes.service.SequenceGeneratorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
-import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
-import org.springframework.stereotype.Component;
+        import com.patientNotes.patientNotes.model.Notes;
+        import com.patientNotes.patientNotes.service.SequenceGeneratorService;
+        import org.apache.logging.log4j.LogManager;
+        import org.apache.logging.log4j.Logger;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
+        import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
+        import org.springframework.stereotype.Component;
 
 @Component
 public class UserModelListener extends AbstractMongoEventListener<Notes> {
+    private static final Logger logger = LogManager.getLogger(UserModelListener.class);
     private SequenceGeneratorService sequenceGenerator;
 
     @Autowired

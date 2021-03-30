@@ -1,12 +1,15 @@
 package com.patientAssessments.patientAssessments.beans;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Notes  implements Serializable {
+public class Notes implements Serializable {
+    private static final Logger logger = LogManager.getLogger(Notes.class);
     private long id;
     private String lastName;
     private String firstName;
@@ -19,7 +22,7 @@ public class Notes  implements Serializable {
     public Notes() {
     }
 
-    public Notes(String lastName, String firstName, Date dateOfBirth,int age, String note) {
+    public Notes(String lastName, String firstName, Date dateOfBirth, int age, String note) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;

@@ -1,0 +1,963 @@
+2021-03-30T11:42:43.278+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T11:42:43.344+0200 INFO Starting PatientNotesApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 32068 (D:\projetoc9\patientNotes\target\classes started by USER in D:\projetoc9\patientNotes)
+2021-03-30T11:42:43.350+0200 INFO The following profiles are active: dev
+2021-03-30T11:42:43.452+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T11:42:43.453+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T11:42:45.113+0200 INFO Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-03-30T11:42:45.122+0200 DEBUG Scanning for MongoDB repositories in packages com.patientNotes.patientNotes.
+2021-03-30T11:42:45.136+0200 DEBUG Identified candidate component class: file [D:\projetoc9\patientNotes\target\classes\com\patientNotes\patientNotes\repository\NotesRepository.class]
+2021-03-30T11:42:45.193+0200 INFO Finished Spring Data repository scanning in 70 ms. Found 1 MongoDB repository interfaces.
+2021-03-30T11:42:45.551+0200 INFO BeanFactory id=1b02e59d-861d-33b6-a21e-90cd8803a064
+2021-03-30T11:42:47.301+0200 INFO Tomcat initialized with port(s): 8083 (http)
+2021-03-30T11:42:47.332+0200 INFO Initializing ProtocolHandler ["http-nio-8083"]
+2021-03-30T11:42:47.333+0200 INFO Starting service [Tomcat]
+2021-03-30T11:42:47.334+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T11:42:47.523+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T11:42:47.523+0200 INFO Root WebApplicationContext: initialization completed in 4067 ms
+2021-03-30T11:42:48.030+0200 INFO Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-03-30T11:42:48.157+0200 INFO Opened connection [connectionId{localValue:2, serverValue:8}] to localhost:27017
+2021-03-30T11:42:48.167+0200 INFO Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+2021-03-30T11:42:48.170+0200 INFO Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=66100000}
+2021-03-30T11:42:48.220+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T11:42:48.221+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T11:42:48.221+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T11:42:48.221+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T11:42:48.221+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T11:42:48.222+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T11:42:48.223+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T11:42:48.223+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T11:42:48.223+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T11:42:48.224+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T11:42:48.225+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T11:42:48.226+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.226+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T11:42:48.226+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T11:42:48.226+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.226+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.227+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.227+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:42:48.227+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.227+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:42:48.227+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.227+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.228+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.229+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.229+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.229+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T11:42:48.229+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T11:42:48.229+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T11:42:48.230+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T11:42:48.230+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T11:42:48.230+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.230+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.231+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.231+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.231+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.231+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T11:42:48.231+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T11:42:48.232+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T11:42:48.232+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T11:42:48.232+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T11:42:48.232+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T11:42:48.232+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T11:42:48.233+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T11:42:48.233+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.233+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.233+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.233+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:42:48.234+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.234+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:42:48.234+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.234+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T11:42:48.234+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.235+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:42:48.235+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.235+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.235+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.235+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T11:42:48.235+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.236+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T11:42:48.236+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.236+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.236+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T11:42:48.236+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.237+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T11:42:48.237+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T11:42:48.238+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.238+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.342+0200 INFO LiveReload server is running on port 35729
+2021-03-30T11:42:48.356+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T11:42:48.357+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T11:42:48.358+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T11:42:48.359+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:42:48.360+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.361+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T11:42:48.361+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T11:42:48.362+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T11:42:48.363+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T11:42:48.363+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T11:42:48.363+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.363+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.363+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T11:42:48.364+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.365+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.366+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:42:48.366+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.366+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:42:48.366+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.366+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T11:42:48.366+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.367+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:42:48.367+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.367+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T11:42:48.368+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:42:48.368+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:42:48.368+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T11:42:48.368+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T11:42:48.368+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T11:42:48.368+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T11:42:48.368+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T11:42:48.369+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T11:42:48.369+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T11:42:48.369+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:42:48.369+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T11:42:48.462+0200 DEBUG Initializing repository instance for com.patientNotes.patientNotes.repository.NotesRepository…
+2021-03-30T11:42:48.560+0200 DEBUG Finished creation of repository instance for {}.
+2021-03-30T11:42:48.825+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T11:42:50.014+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T11:42:50.054+0200 INFO Starting ProtocolHandler ["http-nio-8083"]
+2021-03-30T11:42:50.085+0200 INFO Tomcat started on port(s): 8083 (http) with context path ''
+2021-03-30T11:42:50.712+0200 INFO Started PatientNotesApplication in 9.135 seconds (JVM running for 11.42)
+2021-03-30T11:44:20.037+0200 INFO Initializing Application
+2021-03-30T11:44:20.513+0200 INFO Initializing Application
+2021-03-30T11:44:22.235+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T11:44:22.307+0200 INFO Starting PatientNotesApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 6564 (D:\projetoc9\patientNotes\target\classes started by USER in D:\projetoc9\patientNotes)
+2021-03-30T11:44:22.314+0200 INFO The following profiles are active: dev
+2021-03-30T11:44:22.398+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T11:44:22.398+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T11:44:24.562+0200 INFO Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-03-30T11:44:24.569+0200 DEBUG Scanning for MongoDB repositories in packages com.patientNotes.patientNotes.
+2021-03-30T11:44:24.582+0200 DEBUG Identified candidate component class: file [D:\projetoc9\patientNotes\target\classes\com\patientNotes\patientNotes\repository\NotesRepository.class]
+2021-03-30T11:44:24.638+0200 INFO Finished Spring Data repository scanning in 68 ms. Found 1 MongoDB repository interfaces.
+2021-03-30T11:44:24.997+0200 INFO BeanFactory id=1b02e59d-861d-33b6-a21e-90cd8803a064
+2021-03-30T11:44:26.394+0200 INFO Tomcat initialized with port(s): 8083 (http)
+2021-03-30T11:44:26.421+0200 INFO Initializing ProtocolHandler ["http-nio-8083"]
+2021-03-30T11:44:26.422+0200 INFO Starting service [Tomcat]
+2021-03-30T11:44:26.422+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T11:44:26.615+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T11:44:26.616+0200 INFO Root WebApplicationContext: initialization completed in 4214 ms
+2021-03-30T11:44:27.110+0200 INFO Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-03-30T11:44:27.229+0200 INFO Opened connection [connectionId{localValue:1, serverValue:10}] to localhost:27017
+2021-03-30T11:44:27.229+0200 INFO Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=43153900}
+2021-03-30T11:44:27.229+0200 INFO Opened connection [connectionId{localValue:2, serverValue:9}] to localhost:27017
+2021-03-30T11:44:27.301+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T11:44:27.301+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T11:44:27.303+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T11:44:27.303+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T11:44:27.304+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T11:44:27.305+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T11:44:27.306+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T11:44:27.306+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T11:44:27.306+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T11:44:27.306+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T11:44:27.306+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T11:44:27.307+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T11:44:27.307+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.307+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T11:44:27.307+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T11:44:27.307+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T11:44:27.308+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T11:44:27.308+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T11:44:27.308+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T11:44:27.308+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T11:44:27.308+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T11:44:27.309+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.309+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T11:44:27.310+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T11:44:27.311+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.311+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.311+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.312+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:44:27.312+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.312+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:44:27.312+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.312+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T11:44:27.313+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T11:44:27.313+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T11:44:27.313+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T11:44:27.313+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T11:44:27.313+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.314+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.314+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T11:44:27.315+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T11:44:27.316+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.316+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.316+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T11:44:27.317+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T11:44:27.318+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T11:44:27.318+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T11:44:27.318+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T11:44:27.318+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.319+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:44:27.320+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.320+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T11:44:27.320+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.320+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:44:27.320+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.320+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.321+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T11:44:27.322+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.322+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:44:27.322+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T11:44:27.322+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T11:44:27.322+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T11:44:27.322+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T11:44:27.322+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T11:44:27.323+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T11:44:27.323+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T11:44:27.323+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.323+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.445+0200 INFO LiveReload server is running on port 35729
+2021-03-30T11:44:27.461+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T11:44:27.461+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T11:44:27.462+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T11:44:27.463+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.464+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.465+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.465+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:44:27.465+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.465+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:44:27.465+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.466+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.466+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.467+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T11:44:27.468+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T11:44:27.469+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.469+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.469+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.470+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T11:44:27.470+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.470+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T11:44:27.470+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.470+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T11:44:27.470+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.470+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:44:27.470+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.471+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T11:44:27.472+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T11:44:27.472+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T11:44:27.472+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T11:44:27.473+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T11:44:27.588+0200 DEBUG Initializing repository instance for com.patientNotes.patientNotes.repository.NotesRepository…
+2021-03-30T11:44:27.706+0200 DEBUG Finished creation of repository instance for {}.
+2021-03-30T11:44:27.982+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T11:44:29.184+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T11:44:29.239+0200 INFO Starting ProtocolHandler ["http-nio-8083"]
+2021-03-30T11:44:29.276+0200 INFO Tomcat started on port(s): 8083 (http) with context path ''
+2021-03-30T11:44:30.189+0200 INFO Started PatientNotesApplication in 9.637 seconds (JVM running for 11.942)
+2021-03-30T11:44:56.404+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30T11:44:56.405+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-03-30T11:44:56.408+0200 INFO Completed initialization in 2 ms
+2021-03-30T11:44:56.583+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T11:44:56.638+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T11:44:56.670+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T11:44:56.725+0200 INFO Opened connection [connectionId{localValue:3, serverValue:11}] to localhost:27017
+2021-03-30T11:44:56.747+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T11:44:56.786+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T11:44:56.790+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T11:44:56.791+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T11:44:56.791+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T11:44:56.793+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T11:45:33.233+0200 INFO Show note by id = 3
+2021-03-30T11:45:33.236+0200 DEBUG findOne using query: { "id" : 3} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T11:45:33.237+0200 DEBUG findOne using query: { "_id" : 3} fields: {} in db.collection: patientnotes.notes
+2021-03-30T11:45:33.393+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T11:45:33.395+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:08:50.968+0200 INFO Initializing Application
+2021-03-30T12:08:51.482+0200 INFO Initializing Application
+2021-03-30T12:08:53.354+0200 INFO HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30T12:08:53.444+0200 INFO Starting PatientNotesApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 35612 (D:\projetoc9\patientNotes\target\classes started by USER in D:\projetoc9\patientNotes)
+2021-03-30T12:08:53.448+0200 INFO The following profiles are active: dev
+2021-03-30T12:08:53.556+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30T12:08:53.557+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30T12:08:55.770+0200 INFO Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-03-30T12:08:55.777+0200 DEBUG Scanning for MongoDB repositories in packages com.patientNotes.patientNotes.
+2021-03-30T12:08:55.790+0200 DEBUG Identified candidate component class: file [D:\projetoc9\patientNotes\target\classes\com\patientNotes\patientNotes\repository\NotesRepository.class]
+2021-03-30T12:08:55.852+0200 INFO Finished Spring Data repository scanning in 74 ms. Found 1 MongoDB repository interfaces.
+2021-03-30T12:08:56.239+0200 INFO BeanFactory id=1b02e59d-861d-33b6-a21e-90cd8803a064
+2021-03-30T12:08:58.124+0200 INFO Tomcat initialized with port(s): 8083 (http)
+2021-03-30T12:08:58.154+0200 INFO Initializing ProtocolHandler ["http-nio-8083"]
+2021-03-30T12:08:58.156+0200 INFO Starting service [Tomcat]
+2021-03-30T12:08:58.156+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-30T12:08:58.350+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-03-30T12:08:58.350+0200 INFO Root WebApplicationContext: initialization completed in 4791 ms
+2021-03-30T12:08:58.932+0200 INFO Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-03-30T12:08:59.358+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T12:08:59.359+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T12:08:59.360+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T12:08:59.360+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T12:08:59.360+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T12:08:59.360+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T12:08:59.362+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T12:08:59.363+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T12:08:59.363+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T12:08:59.364+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T12:08:59.364+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T12:08:59.364+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T12:08:59.365+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.365+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T12:08:59.366+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T12:08:59.367+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T12:08:59.367+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T12:08:59.367+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T12:08:59.368+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T12:08:59.368+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T12:08:59.368+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T12:08:59.368+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.368+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T12:08:59.369+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T12:08:59.370+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.370+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.371+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.371+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T12:08:59.372+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.374+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T12:08:59.375+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.376+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T12:08:59.376+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T12:08:59.376+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T12:08:59.377+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T12:08:59.378+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T12:08:59.378+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.379+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.379+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.379+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.383+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T12:08:59.384+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T12:08:59.384+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T12:08:59.384+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T12:08:59.385+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T12:08:59.385+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.385+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.385+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.386+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.386+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.386+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T12:08:59.386+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T12:08:59.386+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T12:08:59.387+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T12:08:59.387+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T12:08:59.387+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T12:08:59.387+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T12:08:59.406+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T12:08:59.406+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.406+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.406+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.407+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T12:08:59.407+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.407+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T12:08:59.407+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.407+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T12:08:59.407+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.407+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T12:08:59.408+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.408+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T12:08:59.409+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.409+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T12:08:59.409+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T12:08:59.410+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T12:08:59.410+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.410+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.492+0200 INFO Opened connection [connectionId{localValue:2, serverValue:12}] to localhost:27017
+2021-03-30T12:08:59.493+0200 INFO Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27017
+2021-03-30T12:08:59.493+0200 INFO Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=159785900}
+2021-03-30T12:08:59.621+0200 INFO LiveReload server is running on port 35729
+2021-03-30T12:08:59.644+0200 DEBUG Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2021-03-30T12:08:59.644+0200 DEBUG Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2021-03-30T12:08:59.645+0200 DEBUG Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.646+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2021-03-30T12:08:59.647+0200 DEBUG Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T12:08:59.648+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.649+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T12:08:59.649+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.649+0200 WARN Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-30T12:08:59.649+0200 DEBUG Adding converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.650+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.651+0200 DEBUG Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2021-03-30T12:08:59.652+0200 DEBUG Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class org.joda.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class org.joda.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class org.joda.time.DateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDate as reading converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.653+0200 DEBUG Adding converter from class java.util.Date to class org.joda.time.DateTime as reading converter.
+2021-03-30T12:08:59.653+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.654+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class org.joda.time.DateTime as writing converter. class org.joda.time.DateTime is not a store supported simple type!
+2021-03-30T12:08:59.654+0200 DEBUG Skipping converter from class java.time.Instant to class org.joda.time.LocalDateTime as writing converter. class org.joda.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.654+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.Instant as writing converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T12:08:59.654+0200 DEBUG Skipping converter from class org.joda.time.LocalDateTime to class java.time.LocalDateTime as writing converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.654+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.654+0200 DEBUG Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2021-03-30T12:08:59.655+0200 DEBUG Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2021-03-30T12:08:59.655+0200 DEBUG Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2021-03-30T12:08:59.655+0200 DEBUG Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2021-03-30T12:08:59.656+0200 DEBUG Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2021-03-30T12:08:59.818+0200 DEBUG Initializing repository instance for com.patientNotes.patientNotes.repository.NotesRepository…
+2021-03-30T12:09:00.009+0200 DEBUG Finished creation of repository instance for {}.
+2021-03-30T12:09:00.376+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30T12:09:02.718+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-30T12:09:02.780+0200 INFO Starting ProtocolHandler ["http-nio-8083"]
+2021-03-30T12:09:02.829+0200 INFO Tomcat started on port(s): 8083 (http) with context path ''
+2021-03-30T12:09:03.665+0200 INFO Started PatientNotesApplication in 12.165 seconds (JVM running for 14.457)
+2021-03-30T12:10:00.801+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30T12:10:00.801+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-03-30T12:10:00.802+0200 INFO Completed initialization in 1 ms
+2021-03-30T12:10:00.906+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:00.936+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:00.954+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:01.003+0200 INFO Opened connection [connectionId{localValue:3, serverValue:14}] to localhost:27017
+2021-03-30T12:10:01.022+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.053+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:01.056+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.056+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:01.057+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.058+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:01.063+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:01.064+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:01.066+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.067+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:01.067+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.068+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:01.068+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:01.069+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.815+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.817+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.818+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.821+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.822+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.823+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.823+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.824+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.824+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.825+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.826+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.830+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.832+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.832+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.833+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.833+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.834+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.847+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.851+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.852+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.855+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.856+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.856+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.857+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.858+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.858+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.860+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.862+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.865+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.866+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.866+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.867+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.867+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.867+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.880+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.881+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.882+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.884+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.886+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.886+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.887+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.888+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.888+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.889+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.890+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.893+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.893+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.894+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.895+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.896+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.896+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.904+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-03-30T12:10:41.905+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.906+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.908+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.909+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.910+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.912+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.913+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.914+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})
+2021-03-30T12:10:41.916+0200 DEBUG Created query Query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}}, Fields: {}, Sort: {}
+2021-03-30T12:10:41.917+0200 DEBUG find using query: { "lastName" : "Ferguson", "firstName" : "Lucas", "dateOfBirth" : { "$date" : { "$numberLong" : "-48214800000"}}} fields: {} for class: class com.patientNotes.patientNotes.model.Notes in collection: notes
+2021-03-30T12:10:41.920+0200 DEBUG onAfterLoad({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.921+0200 DEBUG onAfterConvert({_id=3, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-29T00:00:00.000+0200, note=Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=3, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il « se sent très bien »
+poids égal ou inférieur au poids recommandé hémoglycemie
+
+'})
+2021-03-30T12:10:41.921+0200 DEBUG onAfterLoad({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.922+0200 DEBUG onAfterConvert({_id=4, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée , _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=4, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il se sent fatigué pendant la journée
+Il se plaint également de douleurs musculaires
+Tests de laboratoire indiquant une microalbumine élevée '})
+2021-03-30T12:10:41.922+0200 DEBUG onAfterLoad({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes})
+2021-03-30T12:10:41.923+0200 DEBUG onAfterConvert({_id=14, lastName=Ferguson, firstName=Lucas, dateOfBirth=1968-06-22T00:00:00.000+0100, age=52, updateNoteDate=2021-03-08T00:00:00.000+0100, note=Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés, _class=com.patientNotes.patientNotes.model.Notes}, Notes{id=14, lastName='Ferguson', firstName='Lucas', dateOfBirth=Sat Jun 22 00:00:00 CET 1968, note='Le patient déclare qu'il ne se sent pas si fatigué que ça
+Fumeur, il a arrêté dans les 12 mois précédents
+Tests de laboratoire indiquant que les anticorps sont élevés'})

@@ -1,10 +1,13 @@
 package com.patientAssessments.patientAssessments.service;
 
+import com.patientAssessments.patientAssessments.PatientAssessmentsApplication;
 import com.patientAssessments.patientAssessments.beans.Notes;
 import com.patientAssessments.patientAssessments.beans.Patient;
 import com.patientAssessments.patientAssessments.dto.PatientAssessmentDto;
 import com.patientAssessments.patientAssessments.proxies.PatientInformationProxy;
 import com.patientAssessments.patientAssessments.proxies.PatientNotesProxy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import java.util.*;
 
 @Service
 public class PatientAssessmentsService implements IPatientAssessmentService {
+    private static final Logger logger = LogManager.getLogger(PatientAssessmentsService.class);
 
     @Autowired
     PatientInformationProxy patientInformationProxy;

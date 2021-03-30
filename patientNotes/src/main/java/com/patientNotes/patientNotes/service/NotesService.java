@@ -3,6 +3,8 @@ package com.patientNotes.patientNotes.service;
 import com.patientNotes.patientNotes.dto.NotesDto;
 import com.patientNotes.patientNotes.model.Notes;
 import com.patientNotes.patientNotes.repository.NotesRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,13 +12,13 @@ import org.springframework.ui.Model;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
 @Service
 public class NotesService implements INotesService {
+    private static final Logger logger = LogManager.getLogger(NotesService.class);
     private LocalDate currentDate = LocalDate.now();
     @Autowired
     private ModelMapper modelMapper;
