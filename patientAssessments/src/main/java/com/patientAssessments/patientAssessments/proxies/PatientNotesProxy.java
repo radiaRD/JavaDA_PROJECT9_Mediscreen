@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Date;
 import java.util.List;
 
-@FeignClient(name = "patientNotes", url = "localhost:8083")
+@FeignClient(name = "patientNotes", url = "patient-notes:8083")
 public interface PatientNotesProxy {
     static final Logger logger = LogManager.getLogger(PatientNotesProxy.class);
 

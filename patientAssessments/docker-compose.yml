@@ -1,0 +1,76 @@
+version: '3'
+services:
+  patientassessment:
+    depends_on:
+      - patient-information
+      - patient-notes
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+
+  patient-information:
+    depends_on:
+      - db
+    build:
+      context: D:\projetoc9\patientInformation
+      dockerfile: Dockerfile
+    container_name: patient-information
+    ports:
+      - "8081:8081"
+    restart: always
+
+    environment:
+      PATIENTINFORMATION_DB_HOST: db:3307
+      PATIENTINFORMATION_DB_USER: root
+      PATIENTINFORMATION_DB_PASSWORD: rootroot
+      PATIENTINFORMATION_DB_NAME: patientdata
+  # Database Service (Mysql)
+  db:
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - '3307:3306'
+    #command: mysqld --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: patientdata
+      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_PASSWORD: rootroot
+    security_opt:
+      - seccomp:unconfined
+
+#volumes:
+#  db_data: {}
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    volumes:
+      - mongo-volume:/data/db
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: patientnotes
+    restart: always
+
+  patient-notes:
+    depends_on:
+      - mongodb
+    build:
+      context: D:\projetoc9\patientNotes
+      dockerfile: Dockerfile
+    container_name: patient-notes
+    ports:
+      - "8083:8083"
+    environment:
+      PATIENTNOTES_MONGODB_HOST: mongodb:27018
+      PATIENTNOTES_MONGODB_NAME: patientnotes
+    restart: always
+
+volumes:
+  db_data: {}
+  mongo-volume:

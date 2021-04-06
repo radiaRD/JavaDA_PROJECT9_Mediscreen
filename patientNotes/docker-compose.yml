@@ -1,15 +1,29 @@
 version: "3"
 services:
-  db:
-    image: mongo:3.2.4
-    container_name: "db"
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    volumes:
+      - mongo-volume:/data/db
     ports:
-      - 27017:27017
-    command: --smallfiles
-  notes:
-    image: notes
+      - "27018:27017"
+    environment:
+       MONGO_INITDB_DATABASE: patientnotes
+    restart: always
+
+  patient-notes:
+    depends_on:
+      - mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #  image: patient
     ports:
-      - 8080:8080
-    links:
-      - db
-}
+      - "8083:8083"
+    environment:
+        PATIENTNOTES_MONGODB_HOST: mongodb:27018
+        PATIENTNOTES_MONGODB_NAME: patientnotes
+    restart: always
+
+volumes:
+  mongo-volume:

@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@FeignClient(name = "patientInformation", url = "localhost:8081")
+@FeignClient(name = "patientInformation", url = "patient-information:8081")
 public interface PatientInformationProxy {
     static final Logger logger = LogManager.getLogger(PatientInformationProxy.class);
 
