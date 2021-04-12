@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patientInformation</a> &gt; <a href="index.source.html" class="el_package">com.patientData.patientInformation.controller</a> &gt; <span class="el_source">PatientController.java</span></div><h1>PatientController.java</h1><pre class="source lang-java linenums">package com.patientData.patientInformation.controller;
+
+import com.patientData.patientInformation.domain.Patient;
+import com.patientData.patientInformation.dto.PatientDto;
+import com.patientData.patientInformation.repository.PatientRepository;
+import com.patientData.patientInformation.service.IPatientService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+
+
+@Controller
+<span class="fc" id="L22">public class PatientController {</span>
+<span class="fc" id="L23">    private static final Logger logger = LogManager.getLogger(PatientController.class);</span>
+
+    @Autowired
+    private IPatientService patientService;
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+    @RequestMapping(&quot;/patient/list&quot;)
+    public String home(Model model, PatientDto patientDto) {
+<span class="fc" id="L33">        logger.info(&quot;Get patient List&quot;);</span>
+<span class="fc" id="L34">        patientService.home(model, patientDto);</span>
+<span class="fc" id="L35">        return &quot;patientDtoList&quot;;</span>
+    }
+
+    @GetMapping(&quot;/patient/update/{id}&quot;)
+    public String showPatientById(@PathVariable(&quot;id&quot;) Integer id, Model model, PatientDto patientDto) {
+<span class="fc" id="L40">        logger.info(&quot;Show patient by id = &quot; + id);</span>
+<span class="fc" id="L41">        patientService.showPatientById(id, model, patientDto);</span>
+<span class="fc" id="L42">        return &quot;patientDto&quot;;</span>
+    }
+
+    @PostMapping(&quot;/patient/update/{id}&quot;)
+    public String updatePatient(@PathVariable(&quot;id&quot;) Integer id, @Valid PatientDto patientDto,
+                                BindingResult result, Model model) {
+<span class="fc" id="L48">        logger.info(&quot;Validate update patient by id = &quot; + id);</span>
+
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (!result.hasErrors()) {</span>
+<span class="fc" id="L51">            return patientService.updatePatient(id, patientDto, model);</span>
+        }
+<span class="nc" id="L53">        return &quot;patientDto&quot;;</span>
+    }
+
+    @GetMapping(&quot;/patient/add&quot;)
+    public String addPatient(PatientDto patientDto, Model model) {
+<span class="fc" id="L58">        logger.info(&quot;Add patient&quot;);</span>
+<span class="fc" id="L59">        patientService.addPatient(patientDto, model);</span>
+<span class="fc" id="L60">        return &quot;patientDtoAdd&quot;;</span>
+    }
+
+    @PostMapping(&quot;/patient/validate&quot;)
+    public String validate(@Valid PatientDto patientDto, BindingResult result, Model model) {
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (!result.hasErrors()) {</span>
+<span class="fc" id="L66">            logger.info(&quot;Validate add patient&quot;);</span>
+<span class="fc" id="L67">            return patientService.validate(patientDto, model);</span>
+        }
+<span class="nc" id="L69">        logger.info(&quot;Invalid add&quot;);</span>
+<span class="nc" id="L70">        return &quot;patientDtoAdd&quot;;</span>
+    }
+
+    @GetMapping(&quot;/patient/delete/{id}&quot;)
+    public String deletePatient(@PathVariable(&quot;id&quot;) Integer id, Model model, Patient patient) {
+<span class="fc" id="L75">        logger.info(&quot;Delete patient by id = &quot;+id);</span>
+<span class="fc" id="L76">        return patientService.deletePatient(id, model, patient);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patientInformation</a> &gt; <a href="index.source.html" class="el_package">com.patientData.patientInformation.service</a> &gt; <span class="el_source">PatientService.java</span></div><h1>PatientService.java</h1><pre class="source lang-java linenums">package com.patientData.patientInformation.service;
+
+
+import com.patientData.patientInformation.domain.Patient;
+import com.patientData.patientInformation.dto.PatientDto;
+import com.patientData.patientInformation.repository.PatientRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+
+
+import java.util.List;
+
+
+@Service
+<span class="fc" id="L19">public class PatientService implements IPatientService {</span>
+<span class="fc" id="L20">    private static final Logger logger = LogManager.getLogger(PatientService.class);</span>
+    @Autowired
+    private PatientRepository patientRepository;
+    @Autowired
+    private ModelMapper modelMapper;
+
+    @Override
+    public String home(Model model, PatientDto patientDto) {
+<span class="fc" id="L28">        List&lt;Patient&gt; patients = patientRepository.findAll();</span>
+<span class="fc" id="L29">        model.addAttribute(&quot;patientDto&quot;, patients);</span>
+<span class="fc" id="L30">        return &quot;patientDtoList&quot;;</span>
+    }
+
+    @Override
+    public void showPatientById(Integer id, Model model, PatientDto patientDto) {
+<span class="pc" id="L35">        Patient patient = patientRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid patient Id:&quot; + id));</span>
+<span class="fc" id="L36">        patientDto = modelMapper.map(patient, PatientDto.class);</span>
+<span class="fc" id="L37">        model.addAttribute(&quot;patientDto&quot;, patientDto);</span>
+<span class="fc" id="L38">    }</span>
+
+    public String updatePatient(Integer id, PatientDto patientDto, Model model) {
+<span class="fc" id="L41">        Patient patient = modelMapper.map(patientDto, Patient.class);</span>
+<span class="fc" id="L42">        patientRepository.save(patient);</span>
+<span class="fc" id="L43">        model.addAttribute(&quot;patientDto&quot;, patientRepository.findAll());</span>
+<span class="fc" id="L44">        return &quot;patientDtoList&quot;;</span>
+    }
+
+    public String addPatient(PatientDto patientDto, Model model) {
+<span class="fc" id="L48">        model.addAttribute(&quot;patientDtoAdd&quot;, patientDto);</span>
+<span class="fc" id="L49">        return &quot;patientDtoAdd&quot;;</span>
+    }
+
+    @Override
+    public String validate(PatientDto patientDto, Model model) {
+<span class="fc" id="L54">        Patient patient = modelMapper.map(patientDto, Patient.class);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (patientRepository.findByLastNameAndFirstNameAndDateOfBirth(patientDto.getLastName(), patientDto.getFirstName(), patientDto.getDateOfBirth()).isPresent()) {</span>
+<span class="fc" id="L56">            return &quot;patientExist&quot;;</span>
+        }
+<span class="fc" id="L58">        patientRepository.save(patient);</span>
+<span class="fc" id="L59">        model.addAttribute(&quot;patientDto&quot;, patientRepository.findAll());</span>
+<span class="fc" id="L60">        return &quot;patientDtoList&quot;;</span>
+    }
+
+    public String deletePatient(Integer id, Model model, Patient patient) {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (patientRepository.findById(id).isPresent()) {</span>
+<span class="fc" id="L65">            patientRepository.delete(patient);</span>
+<span class="fc" id="L66">            model.addAttribute(&quot;patientDto&quot;, patientRepository.findAll());</span>
+<span class="fc" id="L67">            return &quot;patientDtoList&quot;;</span>
+        }
+<span class="fc" id="L69">        return &quot;patientNotExist&quot;;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

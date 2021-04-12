@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>INotesService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patientNotes</a> &gt; <a href="index.source.html" class="el_package">com.patientNotes.patientNotes.service</a> &gt; <span class="el_source">INotesService.java</span></div><h1>INotesService.java</h1><pre class="source lang-java linenums">package com.patientNotes.patientNotes.service;
+
+import com.patientNotes.patientNotes.dto.NotesDto;
+import com.patientNotes.patientNotes.model.Notes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.ui.Model;
+
+import java.util.Date;
+
+
+public interface INotesService {
+<span class="nc" id="L13">    static final Logger logger = LogManager.getLogger(INotesService.class);</span>
+
+    String home(Model model, NotesDto notesDto);
+
+    String getListNotes(Model model, String lastName, String firstName, Date dateOfBirth);
+
+    void showNotesById(Long id, Model model, NotesDto notesDto);
+
+    String updateNotes(Long id, NotesDto notesDto, Model model);
+
+    void validate(NotesDto notesDto, Model model);
+
+    String deleteNote(Long id, Model model, Notes notes);
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

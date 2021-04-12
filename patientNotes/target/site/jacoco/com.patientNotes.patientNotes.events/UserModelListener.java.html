@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserModelListener.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patientNotes</a> &gt; <a href="index.source.html" class="el_package">com.patientNotes.patientNotes.events</a> &gt; <span class="el_source">UserModelListener.java</span></div><h1>UserModelListener.java</h1><pre class="source lang-java linenums">package com.patientNotes.patientNotes.events;
+
+        import com.patientNotes.patientNotes.model.Notes;
+        import com.patientNotes.patientNotes.service.SequenceGeneratorService;
+        import org.apache.logging.log4j.LogManager;
+        import org.apache.logging.log4j.Logger;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
+        import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
+        import org.springframework.stereotype.Component;
+
+@Component
+public class UserModelListener extends AbstractMongoEventListener&lt;Notes&gt; {
+<span class="fc" id="L14">    private static final Logger logger = LogManager.getLogger(UserModelListener.class);</span>
+    private SequenceGeneratorService sequenceGenerator;
+
+    @Autowired
+<span class="fc" id="L18">    public UserModelListener(SequenceGeneratorService sequenceGenerator) {</span>
+<span class="fc" id="L19">        this.sequenceGenerator = sequenceGenerator;</span>
+<span class="fc" id="L20">    }</span>
+
+    @Override
+    public void onBeforeConvert(BeforeConvertEvent&lt;Notes&gt; event) {
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (event.getSource().getId() &lt; 1) {</span>
+<span class="fc" id="L25">            event.getSource().setId(sequenceGenerator.generateSequence(Notes.SEQUENCE_NAME));</span>
+        }
+<span class="fc" id="L27">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

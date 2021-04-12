@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+patientInformation,com.patientData.patientInformation.dto,PatientDto,21,56,0,0,8,24,1,16,1,16
+patientInformation,com.patientData.patientInformation.repository,PatientRepository,0,4,0,0,0,1,0,1,0,1
+patientInformation,com.patientData.patientInformation.domain,Patient,0,77,0,0,0,32,0,17,0,17
+patientInformation,com.patientData.patientInformation,PatientInformationApplication,8,7,0,0,3,2,1,2,1,2
+patientInformation,com.patientData.patientInformation.config,Config,0,11,0,0,0,3,0,3,0,3
+patientInformation,com.patientData.patientInformation.service,IPatientService,4,0,0,0,1,0,1,0,1,0
+patientInformation,com.patientData.patientInformation.service,PatientService,12,123,0,4,0,26,1,10,1,8
+patientInformation,com.patientData.patientInformation.controller,PatientController,7,96,2,2,3,19,2,8,0,8
+patientInformation,com.patientData.patientInformation.controller,PatientListController,0,39,0,0,0,6,0,4,0,4

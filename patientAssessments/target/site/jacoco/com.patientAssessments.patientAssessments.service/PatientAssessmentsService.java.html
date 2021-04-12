@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientAssessmentsService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">patientAssessments</a> &gt; <a href="index.source.html" class="el_package">com.patientAssessments.patientAssessments.service</a> &gt; <span class="el_source">PatientAssessmentsService.java</span></div><h1>PatientAssessmentsService.java</h1><pre class="source lang-java linenums">package com.patientAssessments.patientAssessments.service;
+
+import com.patientAssessments.patientAssessments.PatientAssessmentsApplication;
+import com.patientAssessments.patientAssessments.beans.Notes;
+import com.patientAssessments.patientAssessments.beans.Patient;
+import com.patientAssessments.patientAssessments.dto.PatientAssessmentDto;
+import com.patientAssessments.patientAssessments.proxies.PatientInformationProxy;
+import com.patientAssessments.patientAssessments.proxies.PatientNotesProxy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+
+
+import java.util.*;
+
+
+@Service
+public class PatientAssessmentsService implements IPatientAssessmentService {
+<span class="fc" id="L22">    private static final Logger logger = LogManager.getLogger(PatientAssessmentsService.class);</span>
+
+    @Autowired
+    PatientInformationProxy patientInformationProxy;
+
+    @Autowired
+    PatientNotesProxy patientNotesProxy;
+
+<span class="fc" id="L30">    public PatientAssessmentsService(PatientInformationProxy patientInformationProxy, PatientNotesProxy patientNotesProxy) {</span>
+<span class="fc" id="L31">        this.patientInformationProxy = patientInformationProxy;</span>
+<span class="fc" id="L32">        this.patientNotesProxy = patientNotesProxy;</span>
+<span class="fc" id="L33">    }</span>
+
+    @Override
+    public String patientRiskLevel(Model model, String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (patientInformationProxy.getPatient(lastName, firstName, dateOfBirth).isPresent()) {</span>
+<span class="fc" id="L38">            PatientAssessmentDto patientAssessmentDto = getRiskLevel(lastName, firstName, dateOfBirth);</span>
+<span class="fc" id="L39">            model.addAttribute(&quot;patientAssessmentDto&quot;, patientAssessmentDto);</span>
+<span class="fc" id="L40">            return &quot;patientAssessmentDto&quot;;</span>
+        }
+<span class="nc" id="L42">        return &quot;patientError&quot;;</span>
+    }
+
+    @Override
+    public String getPatientList(Model model, PatientAssessmentDto patientAssessmentDto) {
+<span class="fc" id="L47">        model.addAttribute(&quot;patientAssessmentDto&quot;, patientList());</span>
+<span class="fc" id="L48">        return &quot;patientAssessmentDtoList&quot;;</span>
+    }
+
+    @Override
+    public String getPatientNotes(Model model, PatientAssessmentDto patientAssessmentDto) {
+<span class="fc" id="L53">        model.addAttribute(&quot;patientAssessmentDto&quot;, notesList());</span>
+<span class="fc" id="L54">        return &quot;patientAssessmentDtoNotesList&quot;;</span>
+    }
+
+    @Override
+    public String getPatientNotesByLastName(Model model, PatientAssessmentDto patientAssessmentDto, String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L59">        model.addAttribute(&quot;patientAssessmentDto&quot;, listNotesPatient(lastName, firstName, dateOfBirth));</span>
+<span class="fc" id="L60">        return &quot;patientAssessmentDtoNotesList&quot;;</span>
+    }
+
+
+    public List&lt;Patient&gt; patientList() {
+<span class="fc" id="L65">        return patientInformationProxy.patientList();</span>
+    }
+
+    public List&lt;Notes&gt; notesList() {
+<span class="fc" id="L69">        return patientNotesProxy.notesList();</span>
+    }
+
+    public List&lt;Notes&gt; listNotesPatient(String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L73">        return patientNotesProxy.listNotesPatient(lastName, firstName, dateOfBirth);</span>
+    }
+
+    public Patient getPatient(String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L77">        Patient patient = patientInformationProxy.getPatient(lastName, firstName, dateOfBirth).get();</span>
+
+<span class="fc" id="L79">        return patient;</span>
+    }
+
+    @Override
+    public List&lt;String&gt; getTerms(String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L84">        List&lt;String&gt; terms = this.triggerterms();</span>
+<span class="fc" id="L85">        List&lt;String&gt; termsCondition = new ArrayList();</span>
+<span class="fc" id="L86">        List&lt;Notes&gt; notes = this.listNotesPatient(lastName, firstName, dateOfBirth);</span>
+
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        for (Notes note : notes) {</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">            for (String term : terms) {</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">                if (containsIgnoreCase(note.getNote(), term.substring(0, 4))) {</span>
+<span class="fc" id="L91">                    termsCondition.add(term);</span>
+                }
+<span class="fc" id="L93">            }</span>
+<span class="fc" id="L94">        }</span>
+<span class="fc" id="L95">        Set&lt;String&gt; mySet = new HashSet&lt;String&gt;(termsCondition);</span>
+<span class="fc" id="L96">        List&lt;String&gt; termsConditionSet = new ArrayList&lt;String&gt;(mySet);</span>
+<span class="fc" id="L97">        return termsConditionSet;</span>
+    }
+
+    @Override
+    public PatientAssessmentDto getRiskLevel(String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L102">        PatientAssessmentDto patientDto = new PatientAssessmentDto();</span>
+<span class="fc" id="L103">        patientDto.setLastName(lastName);</span>
+<span class="fc" id="L104">        patientDto.setFirstName(firstName);</span>
+<span class="fc" id="L105">        patientDto.setDateOfBirth(dateOfBirth);</span>
+<span class="fc" id="L106">        patientDto.setSex(getPatient(lastName, firstName, dateOfBirth).getSex());</span>
+<span class="fc" id="L107">        patientDto.setHomeAddress(getPatient(lastName, firstName, dateOfBirth).getHomeAddress());</span>
+<span class="fc" id="L108">        patientDto.setPhoneNumber(getPatient(lastName, firstName, dateOfBirth).getPhoneNumber());</span>
+<span class="fc" id="L109">        patientDto.setRiskLevel(risk(lastName, firstName, dateOfBirth));</span>
+<span class="fc" id="L110">        return patientDto;</span>
+    }
+
+    @Override
+    public String risk(String lastName, String firstName, @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;) Date dateOfBirth) {
+<span class="fc" id="L115">        List&lt;Notes&gt; notes = this.listNotesPatient(lastName, firstName, dateOfBirth);</span>
+<span class="fc" id="L116">        PatientAssessmentDto patientDto = new PatientAssessmentDto();</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">        if (getTerms(lastName, firstName, dateOfBirth).size() == 0) {</span>
+<span class="nc" id="L118">            patientDto.setRiskLevel(&quot;None&quot;);</span>
+<span class="pc bpc" id="L119" title="4 of 6 branches missed.">        } else if (getTerms(lastName, firstName, dateOfBirth).size() &gt;= 2 &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() &lt; 6 &amp;&amp; notes.get(1).getAge() &gt; 30) {</span>
+<span class="nc" id="L120">            patientDto.setRiskLevel(&quot;Borderline&quot;);</span>
+<span class="pc bpc" id="L121" title="5 of 6 branches missed.">        } else if (notes.get(1).getAge() &lt; 30 &amp;&amp; getPatient(lastName, firstName, dateOfBirth).getSex().equals(&quot;M&quot;) &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() == 3) {</span>
+<span class="nc" id="L122">            patientDto.setRiskLevel(&quot;In Danger&quot;);</span>
+<span class="pc bpc" id="L123" title="5 of 6 branches missed.">        } else if (notes.get(1).getAge() &lt; 30 &amp;&amp; getPatient(lastName, firstName, dateOfBirth).getSex().equals(&quot;F&quot;) &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() == 4) {</span>
+<span class="nc" id="L124">            patientDto.setRiskLevel(&quot;In Danger&quot;);</span>
+<span class="pc bpc" id="L125" title="3 of 6 branches missed.">        } else if (notes.get(1).getAge() &gt; 30 &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() &gt;= 6 &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() &lt; 8) {</span>
+<span class="fc" id="L126">            patientDto.setRiskLevel(&quot;In Danger&quot;);</span>
+<span class="nc bnc" id="L127" title="All 6 branches missed.">        } else if (notes.get(1).getAge() &lt; 30 &amp;&amp; getPatient(lastName, firstName, dateOfBirth).getSex().equals(&quot;M&quot;) &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() == 5) {</span>
+<span class="nc" id="L128">            patientDto.setRiskLevel(&quot;Early onset&quot;);</span>
+<span class="nc bnc" id="L129" title="All 6 branches missed.">        } else if (notes.get(1).getAge() &lt; 30 &amp;&amp; getPatient(lastName, firstName, dateOfBirth).getSex().equals(&quot;F&quot;) &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() == 7) {</span>
+<span class="nc" id="L130">            patientDto.setRiskLevel(&quot;Early onset&quot;);</span>
+<span class="nc bnc" id="L131" title="All 4 branches missed.">        } else if (notes.get(1).getAge() &gt; 30 &amp;&amp; getTerms(lastName, firstName, dateOfBirth).size() &gt;= 8) {</span>
+<span class="nc" id="L132">            patientDto.setRiskLevel(&quot;Early onset&quot;);</span>
+        } else {
+<span class="nc" id="L134">            patientDto.setRiskLevel(&quot;Undefined risk level&quot;);</span>
+        }
+<span class="fc" id="L136">        return patientDto.getRiskLevel();</span>
+    }
+
+    @Override
+    public List&lt;String&gt; triggerterms() {
+<span class="fc" id="L141">        List&lt;String&gt; terms = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L142">        terms.add(&quot;Hémoglobine A1C&quot;);</span>
+<span class="fc" id="L143">        terms.add(&quot;Microalbumine&quot;);</span>
+<span class="fc" id="L144">        terms.add(&quot;Taille&quot;);</span>
+<span class="fc" id="L145">        terms.add(&quot;Poids&quot;);</span>
+<span class="fc" id="L146">        terms.add(&quot;Fumeur&quot;);</span>
+<span class="fc" id="L147">        terms.add(&quot;Anormal&quot;);</span>
+<span class="fc" id="L148">        terms.add(&quot;Cholestérol&quot;);</span>
+<span class="fc" id="L149">        terms.add(&quot;Vertige&quot;);</span>
+<span class="fc" id="L150">        terms.add(&quot;Rechute&quot;);</span>
+<span class="fc" id="L151">        terms.add(&quot;Réaction&quot;);</span>
+<span class="fc" id="L152">        terms.add(&quot;Anticorps&quot;);</span>
+<span class="fc" id="L153">        return terms;</span>
+    }
+
+    public static boolean containsIgnoreCase(String str, String subString) {
+<span class="fc" id="L157">        return str.toLowerCase().contains(subString.toLowerCase());</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
