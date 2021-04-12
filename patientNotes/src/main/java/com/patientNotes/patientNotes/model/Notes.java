@@ -1,9 +1,7 @@
 package com.patientNotes.patientNotes.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;

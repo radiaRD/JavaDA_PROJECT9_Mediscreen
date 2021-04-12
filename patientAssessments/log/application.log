@@ -1,0 +1,701 @@
+2021-04-02T12:36:49.218+0200 INFO Initializing Application
+2021-04-02T12:36:51.924+0200 INFO Initializing Application
+2021-04-02T12:36:54.997+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 57172 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-02T12:36:55.030+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-02T12:36:56.288+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-02T12:36:56.289+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-02T12:37:04.283+0200 INFO BeanFactory id=d3eb8705-1b03-36d9-8645-0a21d7d962dd
+2021-04-02T12:37:11.390+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-02T12:37:11.614+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-02T12:37:11.616+0200 INFO Starting service [Tomcat]
+2021-04-02T12:37:11.617+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-02T12:37:30.313+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-02T12:37:30.313+0200 INFO Root WebApplicationContext: initialization completed in 34023 ms
+2021-04-02T12:37:32.186+0200 INFO LiveReload server is running on port 35729
+2021-04-02T12:37:33.285+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-02T12:37:35.732+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-02T12:37:35.760+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-02T12:37:35.860+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-02T12:37:36.678+0200 INFO Started PatientAssessmentsApplication in 44.729 seconds (JVM running for 54.329)
+2021-04-02T12:38:01.607+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-02T12:38:01.607+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-02T12:38:01.608+0200 INFO Completed initialization in 1 ms
+2021-04-02T12:38:02.042+0200 INFO Get patient List
+2021-04-02T12:38:02.042+0200 INFO Get patient List
+2021-04-02T12:38:03.846+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Unexpected end of file from server executing GET http://localhost:8081/patientlist] with root cause
+java.net.SocketException: Unexpected end of file from server
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:862) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:859) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1610) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy98.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-02T12:38:03.846+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Unexpected end of file from server executing GET http://localhost:8081/patientlist] with root cause
+java.net.SocketException: Unexpected end of file from server
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:862) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:859) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1610) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy98.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-02T12:41:25.649+0200 INFO Get patient List
+2021-04-02T12:41:27.962+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Unexpected end of file from server executing GET http://localhost:8081/patientlist] with root cause
+java.net.SocketException: Unexpected end of file from server
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:862) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:859) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1610) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy98.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-02T14:22:53.958+0200 INFO Initializing Application
+2021-04-02T14:22:54.829+0200 INFO Initializing Application
+2021-04-02T14:22:56.868+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 56048 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-02T14:22:56.875+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-02T14:22:57.023+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-02T14:22:57.023+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-02T14:23:00.703+0200 INFO BeanFactory id=d3eb8705-1b03-36d9-8645-0a21d7d962dd
+2021-04-02T14:23:04.153+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-02T14:23:04.238+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-02T14:23:04.239+0200 INFO Starting service [Tomcat]
+2021-04-02T14:23:04.240+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-02T14:23:06.618+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-02T14:23:06.618+0200 INFO Root WebApplicationContext: initialization completed in 9593 ms
+2021-04-02T14:23:07.304+0200 INFO LiveReload server is running on port 35729
+2021-04-02T14:23:07.949+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-02T14:23:09.690+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-02T14:23:09.720+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-02T14:23:09.742+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-02T14:23:10.153+0200 INFO Started PatientAssessmentsApplication in 15.295 seconds (JVM running for 28.138)
+2021-04-02T14:24:13.378+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-02T14:24:13.379+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-02T14:24:13.381+0200 INFO Completed initialization in 2 ms
+2021-04-02T14:24:13.551+0200 INFO Get patient List
+2021-04-02T14:24:32.177+0200 INFO Get patient List
+2021-04-02T16:05:14.238+0200 INFO Initializing Application
+2021-04-02T16:05:14.778+0200 INFO Initializing Application
+2021-04-02T16:05:16.481+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 56404 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-02T16:05:16.502+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-02T16:05:16.613+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-02T16:05:16.614+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-02T16:05:18.905+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-02T16:05:25.039+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-02T16:05:25.065+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-02T16:05:25.066+0200 INFO Starting service [Tomcat]
+2021-04-02T16:05:25.066+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-02T16:05:27.590+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-02T16:05:27.590+0200 INFO Root WebApplicationContext: initialization completed in 10972 ms
+2021-04-02T16:05:28.046+0200 INFO LiveReload server is running on port 35729
+2021-04-02T16:05:28.317+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-02T16:05:29.504+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-02T16:05:29.536+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-02T16:05:29.568+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-02T16:05:30.107+0200 INFO Started PatientAssessmentsApplication in 15.308 seconds (JVM running for 17.907)
+2021-04-02T16:08:34.826+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-02T16:08:34.827+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-02T16:08:34.830+0200 INFO Completed initialization in 3 ms
+2021-04-02T16:08:34.907+0200 INFO Get patient List
+2021-04-05T13:26:52.064+0200 INFO Initializing Application
+2021-04-05T13:26:53.160+0200 INFO Initializing Application
+2021-04-05T13:26:55.199+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 67452 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T13:26:55.205+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T13:26:55.399+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T13:26:55.399+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T13:26:59.339+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T13:27:03.007+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T13:27:03.129+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T13:27:03.129+0200 INFO Starting service [Tomcat]
+2021-04-05T13:27:03.129+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T13:27:05.115+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T13:27:05.115+0200 INFO Root WebApplicationContext: initialization completed in 9716 ms
+2021-04-05T13:27:06.018+0200 INFO LiveReload server is running on port 35729
+2021-04-05T13:27:06.575+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T13:27:08.349+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T13:27:08.411+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T13:27:08.439+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T13:27:08.939+0200 INFO Started PatientAssessmentsApplication in 15.69 seconds (JVM running for 21.418)
+2021-04-05T14:11:34.471+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-05T14:11:34.472+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-05T14:11:34.473+0200 INFO Completed initialization in 1 ms
+2021-04-05T14:12:19.363+0200 INFO Search by patient
+2021-04-05T14:55:16.618+0200 INFO Initializing Application
+2021-04-05T14:55:17.605+0200 INFO Initializing Application
+2021-04-05T14:55:20.353+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 39552 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T14:55:20.358+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T14:55:20.708+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T14:55:20.708+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T14:55:26.083+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T14:55:29.517+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T14:55:29.616+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T14:55:29.618+0200 INFO Starting service [Tomcat]
+2021-04-05T14:55:29.619+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T14:55:31.366+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T14:55:31.367+0200 INFO Root WebApplicationContext: initialization completed in 10655 ms
+2021-04-05T14:55:32.204+0200 INFO LiveReload server is running on port 35729
+2021-04-05T14:55:32.790+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T14:55:34.615+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T14:55:34.756+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T14:55:34.789+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T14:55:35.293+0200 INFO Started PatientAssessmentsApplication in 17.672 seconds (JVM running for 24.428)
+2021-04-05T14:56:56.448+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-05T14:56:56.449+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-05T14:56:56.450+0200 INFO Completed initialization in 1 ms
+2021-04-05T14:57:00.511+0200 INFO Get patient List
+2021-04-05T14:57:26.281+0200 INFO Search by patient
+2021-04-05T14:57:29.063+0200 INFO Get patient List
+2021-04-05T15:11:00.194+0200 INFO Initializing Application
+2021-04-05T15:11:01.023+0200 INFO Initializing Application
+2021-04-05T15:11:02.946+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 27812 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T15:11:02.956+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T15:11:03.125+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T15:11:03.125+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T15:11:06.691+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T15:11:08.648+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T15:11:08.692+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:11:08.693+0200 INFO Starting service [Tomcat]
+2021-04-05T15:11:08.694+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T15:11:08.905+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T15:11:08.906+0200 INFO Root WebApplicationContext: initialization completed in 5779 ms
+2021-04-05T15:11:09.510+0200 INFO LiveReload server is running on port 35729
+2021-04-05T15:11:09.962+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T15:11:11.381+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T15:11:11.422+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:11:11.472+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T15:11:12.105+0200 INFO Started PatientAssessmentsApplication in 11.067 seconds (JVM running for 16.06)
+2021-04-05T15:11:36.627+0200 INFO Initializing Application
+2021-04-05T15:11:37.186+0200 INFO Initializing Application
+2021-04-05T15:11:38.963+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 63440 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T15:11:38.968+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T15:11:39.216+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T15:11:39.217+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T15:11:41.339+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T15:11:43.587+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T15:11:43.625+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:11:43.626+0200 INFO Starting service [Tomcat]
+2021-04-05T15:11:43.627+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T15:11:43.812+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T15:11:43.813+0200 INFO Root WebApplicationContext: initialization completed in 4595 ms
+2021-04-05T15:11:44.326+0200 INFO LiveReload server is running on port 35729
+2021-04-05T15:11:44.692+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T15:11:46.470+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T15:11:46.693+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:11:46.777+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T15:11:47.951+0200 INFO Started PatientAssessmentsApplication in 10.746 seconds (JVM running for 13.747)
+2021-04-05T15:12:55.863+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-05T15:12:55.863+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-05T15:12:55.866+0200 INFO Completed initialization in 3 ms
+2021-04-05T15:12:56.024+0200 INFO Get patient List
+2021-04-05T15:12:58.198+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Connection refused: connect executing GET http://127.0.0.1:8081/patientlist] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[?:?]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy99.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-05T15:17:04.090+0200 INFO Get patient List
+2021-04-05T15:17:06.225+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Connection refused: connect executing GET http://127.0.0.1:8081/patientlist] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:474) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:569) ~[?:?]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:341) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:362) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy99.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-05T15:17:16.243+0200 INFO Get patient List
+2021-04-05T15:17:16.444+0200 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: Unexpected end of file from server executing GET http://127.0.0.1:8081/patientlist] with root cause
+java.net.SocketException: Unexpected end of file from server
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:862) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:859) ~[?:?]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1610) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[?:?]
+	at feign.Client$Default.convertResponse(Client.java:108) ~[feign-core-10.10.1.jar:?]
+	at feign.Client$Default.execute(Client.java:104) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-10.10.1.jar:?]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-10.10.1.jar:?]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-10.10.1.jar:?]
+	at com.sun.proxy.$Proxy99.patientList(Unknown Source) ~[?:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.patientList(PatientAssessmentsService.java:65) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.service.PatientAssessmentsService.getPatientList(PatientAssessmentsService.java:47) ~[classes/:?]
+	at com.patientAssessments.patientAssessments.controller.PatientController.getListPatient(PatientController.java:48) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.3.jar:2.4.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+2021-04-05T15:18:06.195+0200 INFO Initializing Application
+2021-04-05T15:18:06.643+0200 INFO Initializing Application
+2021-04-05T15:18:09.473+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 69404 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T15:18:09.473+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T15:18:09.832+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T15:18:09.832+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T15:18:13.019+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T15:18:15.726+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T15:18:15.821+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:18:15.837+0200 INFO Starting service [Tomcat]
+2021-04-05T15:18:15.837+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T15:18:16.199+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T15:18:16.199+0200 INFO Root WebApplicationContext: initialization completed in 6365 ms
+2021-04-05T15:18:16.911+0200 INFO LiveReload server is running on port 35729
+2021-04-05T15:18:17.334+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T15:18:18.859+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T15:18:18.890+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T15:18:18.921+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T15:18:19.475+0200 INFO Started PatientAssessmentsApplication in 12.793 seconds (JVM running for 15.593)
+2021-04-05T15:18:41.663+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-05T15:18:41.663+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-05T15:18:41.665+0200 INFO Completed initialization in 2 ms
+2021-04-05T15:18:41.770+0200 INFO Get patient List
+2021-04-05T20:12:26.350+0200 INFO Initializing Application
+2021-04-05T20:12:27.899+0200 INFO Initializing Application
+2021-04-05T20:12:30.381+0200 INFO Starting PatientAssessmentsApplication using Java 12.0.2 on DESKTOP-10MOG2F with PID 67640 (D:\projetoc9\patientAssessments\target\classes started by USER in D:\projetoc9\patientAssessments)
+2021-04-05T20:12:30.446+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-05T20:12:30.704+0200 INFO Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-05T20:12:30.704+0200 INFO For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-05T20:12:34.646+0200 INFO BeanFactory id=239f8179-7e4b-31cc-86b7-6e98826e15a4
+2021-04-05T20:12:38.337+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2021-04-05T20:12:38.412+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-05T20:12:38.413+0200 INFO Starting service [Tomcat]
+2021-04-05T20:12:38.414+0200 INFO Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-05T20:12:40.357+0200 INFO Initializing Spring embedded WebApplicationContext
+2021-04-05T20:12:40.357+0200 INFO Root WebApplicationContext: initialization completed in 9651 ms
+2021-04-05T20:12:41.362+0200 INFO LiveReload server is running on port 35729
+2021-04-05T20:12:42.023+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-05T20:12:43.443+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-05T20:12:43.476+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2021-04-05T20:12:43.501+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-05T20:12:44.173+0200 INFO Started PatientAssessmentsApplication in 16.259 seconds (JVM running for 22.853)
+2021-04-05T20:12:50.732+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-05T20:12:50.733+0200 INFO Initializing Servlet 'dispatcherServlet'
+2021-04-05T20:12:50.737+0200 INFO Completed initialization in 3 ms
+2021-04-05T20:12:51.078+0200 INFO Get patient List
+2021-04-12T15:19:19.698+0200 INFO Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.patientAssessments.patientAssessments.PatientAssessmentsApplicationTests], using SpringBootContextLoader
+2021-04-12T15:19:19.755+0200 INFO Could not detect default resource locations for test class [com.patientAssessments.patientAssessments.PatientAssessmentsApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-04-12T15:19:19.755+0200 INFO Could not detect default configuration classes for test class [com.patientAssessments.patientAssessments.PatientAssessmentsApplicationTests]: PatientAssessmentsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-04-12T15:19:20.248+0200 INFO Found @SpringBootConfiguration com.patientAssessments.patientAssessments.PatientAssessmentsApplication for test class com.patientAssessments.patientAssessments.PatientAssessmentsApplicationTests
+2021-04-12T15:19:20.550+0200 INFO Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-04-12T15:19:20.590+0200 INFO Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@45b37003, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3e60be48, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@20a533b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5db6083b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3db48e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@38f2342b, org.springframework.test.context.event.EventPublishingTestExecutionListener@68312b85, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5ab0168, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5c6ee543, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7594d189, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1418a1bd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@49e54217, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@628af295]
+2021-04-12T15:19:21.944+0200 INFO Starting PatientAssessmentsApplicationTests using Java 12.0.2 on DESKTOP-10MOG2F with PID 10424 (started by USER in D:\projetoc9\patientAssessments)
+2021-04-12T15:19:21.950+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-12T15:19:24.410+0200 INFO BeanFactory id=3083ec23-1012-3091-9925-6aabe91f182c
+2021-04-12T15:19:26.252+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-12T15:19:27.853+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-12T15:19:27.927+0200 INFO Started PatientAssessmentsApplicationTests in 7.132 seconds (JVM running for 13.311)
+2021-04-12T15:19:30.787+0200 INFO Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.patientAssessments.patientAssessments.PatientAssessmentTestIT], using SpringBootContextLoader
+2021-04-12T15:19:30.787+0200 INFO Could not detect default resource locations for test class [com.patientAssessments.patientAssessments.PatientAssessmentTestIT]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-04-12T15:19:30.787+0200 INFO Could not detect default configuration classes for test class [com.patientAssessments.patientAssessments.PatientAssessmentTestIT]: PatientAssessmentTestIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-04-12T15:19:30.802+0200 INFO Found @SpringBootConfiguration com.patientAssessments.patientAssessments.PatientAssessmentsApplication for test class com.patientAssessments.patientAssessments.PatientAssessmentTestIT
+2021-04-12T15:19:30.818+0200 INFO Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-04-12T15:19:30.818+0200 INFO Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5c58db5b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2f785ec, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@484976f1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3e32daad, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@24aa4c33, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a4c65af, org.springframework.test.context.event.EventPublishingTestExecutionListener@193176e9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@31fe20d0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@47c33908, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3e5b5d42, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2c4fe25e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6c77afa7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@32a2d058]
+2021-04-12T15:19:31.294+0200 INFO Starting PatientAssessmentTestIT using Java 12.0.2 on DESKTOP-10MOG2F with PID 10424 (started by USER in D:\projetoc9\patientAssessments)
+2021-04-12T15:19:31.310+0200 INFO No active profile set, falling back to default profiles: default
+2021-04-12T15:19:31.890+0200 INFO BeanFactory id=4ad3e821-1df7-3013-b5bc-f8e928e8577b
+2021-04-12T15:19:32.214+0200 INFO Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-12T15:19:33.413+0200 INFO Initializing Spring TestDispatcherServlet ''
+2021-04-12T15:19:33.413+0200 INFO Initializing Servlet ''
+2021-04-12T15:19:33.429+0200 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-12T15:19:33.460+0200 INFO Completed initialization in 47 ms
+2021-04-12T15:19:34.030+0200 INFO Started PatientAssessmentTestIT in 3.209 seconds (JVM running for 19.424)
+2021-04-12T15:19:34.196+0200 INFO Get notes patient by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-04-12T15:19:35.388+0200 INFO Get patient List
+2021-04-12T15:19:35.551+0200 INFO Get diabetes risk level by last name = Ferguson, first name = Lucas and date of birth = Sat Jun 22 00:00:00 CET 1968
+2021-04-12T15:19:35.621+0200 INFO Error patient
+2021-04-12T15:19:35.679+0200 INFO Search by patient
+2021-04-12T15:19:35.722+0200 INFO Get notes List
+2021-04-12T15:19:36.412+0200 INFO Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-12T15:19:36.428+0200 INFO Shutting down ExecutorService 'applicationTaskExecutor'

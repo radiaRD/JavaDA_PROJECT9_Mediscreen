@@ -21,13 +21,12 @@ services:
     ports:
       - "8081:8081"
     restart: always
-
     environment:
       PATIENTINFORMATION_DB_HOST: db:3307
       PATIENTINFORMATION_DB_USER: root
       PATIENTINFORMATION_DB_PASSWORD: rootroot
       PATIENTINFORMATION_DB_NAME: patientdata
-  # Database Service (Mysql)
+
   db:
     image: mysql:latest
     volumes:
@@ -35,16 +34,12 @@ services:
     restart: always
     ports:
       - '3307:3306'
-    #command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_DATABASE: patientdata
       MYSQL_ROOT_PASSWORD: rootroot
       MYSQL_PASSWORD: rootroot
     security_opt:
       - seccomp:unconfined
-
-#volumes:
-#  db_data: {}
 
   mongodb:
     image: mongo:latest
