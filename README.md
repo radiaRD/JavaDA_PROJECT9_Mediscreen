@@ -1,4 +1,5 @@
 # JavaDA_PROJECT9_Mediscreen
+Application médicale qui permet de détecter les risques de diabète des patients.
 # spring-boot
 ## Technical:
 
