@@ -66,6 +66,7 @@ public class PatientService implements IPatientService {
             model.addAttribute("patientDto", patientRepository.findAll());
             return "patientDtoList";
         }
+
         return "patientNotExist";
     }
 
